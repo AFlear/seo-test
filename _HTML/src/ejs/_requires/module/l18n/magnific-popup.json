@@ -1,0 +1,50 @@
+{
+	"magnific-popup--tClose": {
+		"ru": "Закрыть (ESC)",
+		"uk": "Закрити (ESC)",
+		"en": "Close (ESC)",
+		"pl": "Zamknąć (ESC)"
+	},
+	"magnific-popup--tLoading": {
+		"ru": "Загрузка контента ...",
+		"uk": "Завантаження контенту ...",
+		"en": "Loading ...",
+		"pl": "Zawartość do treści ..."
+	},
+	"magnific-popup--tNotFound": {
+		"ru": "Контент не найден",
+		"uk": "Контент не знайдено",
+		"en": "Content not found",
+		"pl": "Nie znaleziono treści"
+	},
+	"magnific-popup--tError": {
+		"ru": "Невозможно загрузить <a href=\\\"%url%\\\" target=\\\"_blank\\\">контент</a>",
+		"uk": "Неможливо завантажити <a href=\\\"%url%\\\" target=\\\"_blank\\\">контент</a>",
+		"en": "Could not load <a href=\\\"%url%\\\" target=\\\"_blank\\\">the content</a>",
+		"pl": "Niemożliwe do ściągnięcia <a href=\\\"%url%\\\" target=\\\"_blank\\\">treści</a>"
+	},
+	"magnific-popup--tErrorImage": {
+		"ru": "Невозможно загрузить <a href=\\\"%url%\\\" target=\\\"_blank\\\">изображение</a>",
+		"uk": "Неможливо завантажити <a href=\\\"%url%\\\" target=\\\"_blank\\\">зображенння</a>",
+		"en": "Could not load <a href=\\\"%url%\\\" target=\\\"_blank\\\">the image</a>",
+		"pl": "Niemożliwe do ściągnięcia <a href=\\\"%url%\\\" target=\\\"_blank\\\">obrazów</a>"
+	},
+	"magnific-popup--tPrev": {
+		"ru": "Предыдущая (клавиша Left)",
+		"uk": "Попередня (клавіша Left)",
+		"en": "Previous (Left arrow key)",
+		"pl": "Poprzednia (klucz Left)"
+	},
+	"magnific-popup--tNext": {
+		"ru": "Следующая (клавиша Right)",
+		"uk": "Наступна (клавіша Right)",
+		"en": "Next (Right arrow key)",
+		"pl": "Następna (klucz Right)"
+	},
+	"magnific-popup--tCounter": {
+		"ru": "%curr% из %total%",
+		"uk": "%curr% з %total%",
+		"en": "%curr% of %total%",
+		"pl": "%curr% z %total%"
+	}
+}

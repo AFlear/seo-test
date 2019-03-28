@@ -1,0 +1,61 @@
+.socials-list {
+	display: flex;
+	margin: -5px 0 0 -5px;
+
+}
+
+.social-link {
+	display: block;
+	height: rem(45);
+	width: rem(45);
+	border-radius: 50%;
+	position: relative;
+	fill: #fff;
+	flex-shrink: 0;
+	margin: 5px;
+	border: 2px solid;
+	svg {
+		@extend %abs-center;
+		@include max-size(50%)
+	}
+	&--facebook {
+		background-color: map-get($colors-network, facebook);
+		border-color: map-get($colors-network, facebook);
+		&:hover {
+			fill: map-get($colors-network, facebook);
+			background-color: #fff;
+		}
+	}
+	&--twitter {
+		background-color: map-get($colors-network, twitter);
+		border-color: map-get($colors-network, twitter);
+		&:hover {
+			fill: map-get($colors-network, twitter);
+			background-color: #fff;
+		}
+	}
+	&--google-plus {
+		background-color: map-get($colors-network, google-plus);
+		border-color: map-get($colors-network, google-plus);
+		&:hover {
+			fill: map-get($colors-network, google-plus);
+			background-color: #fff;
+		}
+	}
+	&--vkontakte {
+		background-color: map-get($colors-network, vkontakte);
+		border-color: map-get($colors-network, vkontakte);
+		&:hover {
+			fill: map-get($colors-network, vkontakte);
+			background-color: #fff;
+		}
+	}
+	&--instagram {
+		background-color: map-get($colors-network, instagram);
+		border-color: map-get($colors-network, instagram);
+		&:hover {
+			fill: map-get($colors-network, instagram);
+			background-color: #fff;
+		}
+	}
+}

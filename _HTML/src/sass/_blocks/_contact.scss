@@ -1,0 +1,75 @@
+.contacts-container{
+	position: relative;
+	&:before{
+		opacity: .25;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		height: 310px;
+		background: #fff url("/Media/assets/images/backgrounds/dot-pattern.png");
+		@include media(lg, max){
+			display: none;
+		}
+	}
+}
+
+.contacts-list{
+	position: relative;
+	z-index: 1;
+	display: flex;
+	padding-top: 25px;
+	@media (max-width: 767px){
+		display: block;
+		padding-top: 0;
+	}
+	@media (min-width: 768px) and (max-width: 1025px){
+		flex-wrap: wrap;
+		.contact{
+			flex-basis: 50%;
+			&__body{
+				flex-basis: 100%;
+			}
+		}
+	}
+}
+
+.contact{
+	display: flex;
+	flex-basis: 19%;
+	margin-top: 20px;
+	&__body{
+		padding-top: 0;
+		flex-basis: 70%;
+	}
+	&__icon{
+		background-color: #2196F3;
+		border-radius: 50%;
+		margin-right: rem(20);
+		width: 40px;
+		height: 40px;
+		position: relative;
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	}
+	&__title{
+		padding-bottom: 5px;
+		text-align: left;
+	}
+	&__subtitle{
+		text-align: left;
+		font-size: rem(20);
+		font-weight: 900;
+		text-transform: uppercase;
+		line-height: 1.3;
+	}
+}

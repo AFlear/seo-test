@@ -1,0 +1,80 @@
+////
+/// @group _system/
+////
+
+// ваш код
+@media print {
+	* { // sass-lint:disable-line no-universal-selectors
+		// sass-lint:disable no-important
+		background: transparent !important;
+		text-shadow: none !important;
+		box-shadow: none !important;
+		color: #000 !important;
+		// sass-lint:enable no-important
+	}
+
+	a {
+		&,
+		&:visited {
+			position: static;
+			text-decoration: none !important; // sass-lint:disable-line no-important
+		}
+
+		&[href]::after {
+			font-style: italic;
+			content: " (" attr(href) ") " !important; // sass-lint:disable-line no-important
+			width: auto !important; // sass-lint:disable-line no-important
+			height: auto !important; // sass-lint:disable-line no-important
+			display: inline !important; // sass-lint:disable-line no-important
+			vertical-align: initial !important; // sass-lint:disable-line no-important
+		}
+
+		&[href^="javascript:"]::after,
+		&[href^="#"]::after {
+			content: "" !important; // sass-lint:disable-line no-important
+		}
+	}
+
+	abbr {
+		[title]::after {
+			content: " (" attr(title) ") ";
+		}
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr {
+		page-break-inside: avoid;
+	}
+
+	img {
+		page-break-inside: avoid;
+		max-width: 100% !important; // sass-lint:disable-line no-important
+		height: auto !important; // sass-lint:disable-line no-important
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+	@page {
+		size: auto;
+		margin: 1cm; // sass-lint:disable-line property-units
+	}
+}

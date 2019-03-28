@@ -1,0 +1,76 @@
+////
+/// @group _blocks/
+////
+
+/// video-reviews
+$vshadow: 0 1px 6px 0 rgba(1, 1, 1, 0.17);
+
+.video-reviews {
+	padding: map-get($gutters, def);
+}
+
+.video {
+
+	display: block;
+	//box-shadow: 0 3px 79px 0 rgba(2, 3, 3, 0.11);
+	//@include resp-val(12, 18, 320, 1280);
+	//font-weight: 400;
+	//line-height: 1.35;
+
+	&__content {
+		position: relative;
+		cursor: pointer;
+		a {
+			display: block;
+		}
+		&:hover {
+			.video__icon {
+				background-image: url("/Media/assets/images/youtube-active.png");
+			}
+		}
+		img {
+			margin: auto
+		}
+	}
+
+	&__meta {
+		display: block;
+		@include resp-val(15, 30, 320, 1280, 'padding-top');
+		@include resp-val(23, 10, 320, 1280, 'padding-bottom');
+		text-align: center;
+		line-height: 1.3;
+
+	}
+
+	&__title {
+		color: #333333;
+		text-transform: uppercase;
+		font-weight: 900;
+	}
+	&__title,
+	&__subtitle {
+		._dark-bg & {
+			color: #fff;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		z-index: 4;
+		cursor: pointer;
+		background: url("/Media/assets/images/youtube-normal.png") no-repeat;
+		background-size: contain;
+		@include resp-val(26, 79, 320, 1280, 'width');
+		@include resp-val(19, 56, 320, 1280, 'height');
+
+	}
+
+	.vshadow {
+		box-shadow: $vshadow;
+	}
+}

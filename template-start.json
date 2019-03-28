@@ -1,0 +1,11 @@
+{
+  "cwd": "_HTML\\",
+  "pkg": "_HTML\\package.json",
+  "template": {
+    "version": "7.7.7"
+  },
+  "components-name-filter": [
+    "template-default$"
+  ],
+  "components": {}
+}

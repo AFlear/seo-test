@@ -1,0 +1,52 @@
+.pagination {
+	$this: &;
+	text-align: center;
+	//@include resp-val(20, 30, 320, 1440, 'padding-top');
+	@include resp-val(20, 80, 320, 1440, 'padding-bottom');
+	@include media(sm, max) {
+		text-align: left;
+	}
+
+	&__list {
+		display: flex;;
+		justify-content: center;
+	}
+
+	&__item {
+		display: block;
+		padding: 5px;
+		&.is-current,
+		&:hover {
+			#{$this}__link,
+			#{$this}__current {
+				border: 2px solid #333;
+				color: #333;
+			}
+
+		}
+
+		&.is-current {
+			pointer-events: none;
+			cursor: default;
+		}
+	}
+
+	&__link,
+	&__current {
+		display: inline-block;
+		border: 2px solid $color-brand;
+		color: $color-brand;
+		font-size: rem(16);
+		text-align: center;
+		transition: background-color .25s ease, color .25s ease;
+		padding: 5px 15px;
+		font-weight: 700;
+	}
+
+	&__link {
+		cursor: pointer;
+	}
+
+	&__current {
+	}
+}

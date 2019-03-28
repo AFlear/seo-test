@@ -1,0 +1,18 @@
+////
+/// @group _settings/
+////
+
+// Брейкпоинты ширины или высоты экрана
+// ---------------------------------
+
+/// Карта брейкпоинтов для ориентации
+/// @type Map
+$orientations: (
+	auto: "only screen and (orientation: auto)",
+	landscape: "only screen and (orientation: landscape)",
+	portrait: "only screen and (orientation: portrait)"
+);
+
+// Брейкпоинты для устройств
+// ---------------------------------
+

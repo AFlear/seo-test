@@ -1,0 +1,39 @@
+<% let listPagination = [
+	{
+		name: '1',
+		current: true
+	},
+	{
+		name: '2'
+	},
+	{
+		name: '3'
+	},
+	{
+		name: '4'
+	},
+	{
+		name: '5'
+	}
+]
+%>
+
+<div class="pagination">
+	<div class="container">
+		<div class="pagination__list">
+			<% listPagination.forEach(item=> { %>
+			<% if( item.current) { %>
+			<div class="pagination__item is-current">
+				<span class="pagination__current"><%- item.name %></span>
+			</div>
+			<% } else { %>
+			<div class="pagination__item">
+				<a class="pagination__link" href=""><%- item.name %></a>
+			</div>
+			<% } %>
+			<% }) %>
+		</div>
+	</div>
+</div>
+
+

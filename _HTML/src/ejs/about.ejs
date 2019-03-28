@@ -1,0 +1,29 @@
+<%
+/** Шаблон страницы "О нас"
+ * @name about.ejs */
+
+/** установка основного лейаута */
+app.setLayout('base.ejs');
+
+/** расширение глобального объекта app
+ * @see module:core */
+app.require('core.js')(app);
+
+// выгружаем инструменты
+const {currentView} = app.data;
+
+
+let title = "О seoevolution";
+let image = 'assets/images/breadcrumbs/about.jpg';
+%>
+
+<%- app.widget('sections/breadcrumbs.ejs', {title, image}) %>
+<%- app.widget('sections/write-us.ejs')%>
+<%- app.widget('sections/our-info.ejs')%>
+<%- app.widget('wysiwyg/about-us.ejs')%>
+<%- app.widget('sections/about-principles.ejs')%>
+<%- app.widget('sections/join-form.ejs')%>
+<%- app.widget('sections/partners.ejs')%>
+<%- app.widget('sections/order-form.ejs')%>
+
+

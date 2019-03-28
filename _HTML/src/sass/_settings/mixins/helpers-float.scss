@@ -1,0 +1,40 @@
+////
+/// @group _settings/
+////
+
+/// Хедперы флоатов
+/// @requires {mixin} media
+/// @requires {mixin} clearfix
+/// @param {Map} $points [()] - карта брейкпоинтов, для которых нужно сделать хелперы
+@mixin helpers-float ($points: ()) {
+	._clearfix {
+		@include clearfix();
+	}
+
+	._clear {
+		clear: both;
+	}
+
+	._ovh {
+		overflow: hidden;
+	}
+
+	// $mod [""] - название брейкпоинта с разделителем
+	@mixin generate ($mod: "") {
+		._#{$mod}fll {
+			float: left;
+		}
+
+		._#{$mod}flr {
+			float: right;
+		}
+	}
+
+	@include generate();
+
+	@each $point, $size in $points {
+		@include media($size) {
+			@include generate($point + $sep);
+		}
+	}
+}

@@ -1,0 +1,116 @@
+<%
+/** шапка сайта
+ * @name header.ejs */
+
+		// выгружаем инструменты
+const {currentView} = app.data;
+const {SvgIcon} = app.el;
+app.mainMenu = [
+	{
+		title: 'О&nbsp;нас',
+		href: 'about'
+	},
+	{
+		title: 'Комплексное&nbsp;продвижение',
+		href: 'subpage',
+		drop: true
+	},
+	{
+		title: 'Услуги',
+		href: 'services'
+	},
+	{
+		title: 'FAQ',
+		href: 'faq'
+	},
+	{title: 'Отзывы',
+		href: 'text-reviews'},
+
+	{
+		title: 'Блог',
+		drop: true,
+		dropmenu: [
+			{
+				href: 'news',
+				title: 'Новости'
+			},
+			{
+				href: 'articles',
+				title: 'Статьи'
+			}
+		]
+	},
+	{
+		title: 'Контакты',
+		href: 'contacts'
+	}
+]
+%>
+
+<div class="header">
+	<div class="header-line header-line--first">
+		<div class=" _flex container">
+			<a href="index" class="logo logo--symbol">
+				<img src="/Media/assets/images/logo.jpg" alt="seo">
+			</a>
+			<div class="header-line__right-side">
+				<div class="icon-term _mr-def _lg-show">
+					<div class="icon-term__icon">
+						<%- new SvgIcon('phone') %>
+					</div>
+					<div class="icon-term__body icon-term__body--one-row">
+						<a href="tel:+380665656665">+38 066 565-66-65</a>
+						<a href="tel:+380999999678">+38 099 999-96-78</a>
+					</div>
+				</div>
+				<div class="icon-term _mr-def _lg-show" style="color:#686259">
+					<div class="icon-term__icon">
+						<%- new SvgIcon('location') %>
+					</div>
+					<div class="icon-term__body">
+						г.Киев, ул. Ушинского, 35<br>
+						Пн-пт: 9:00 - 19:00, сб-вс: выходной
+					</div>
+				</div>
+					<button class="button button--primary header__button js-mfp-ajax" data-mfp-src="hidden/callback.php">
+					Заказать услугу
+				</button>
+				<button type="button" onclick="smartMenu.openMenu()"
+						class="button button--primary header__button button--only-icon _ml-def _def-hide">
+					<%- new app.el.SvgIcon('menu') %>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="header-line header-line--second">
+		<div class="_flex container _justify-between">
+			<!-- TODO ссылку заменить на DIV на всех страницах, кроме главной -->
+			<ul class="header-menu">
+				<% app.mainMenu.forEach(item=>{ %>
+				<% if(item.drop && item.dropmenu){ %>
+					<li class="dropdown">
+						<a href="<%= item.href || '#' %>" class="js-dropdown" data-toggle="dropdown"><%- item.title %>
+						</a>
+						<span class="caret">&#9660;</span>
+							<div data-dropdown-target class="header-dropmenu">
+								<ul>
+									<% item.dropmenu.forEach(menu=>{ %>
+									<li>
+										<a href="<%= menu.href || '#' %>"><%- menu.title%></a>
+									</li>
+									<%})%>
+								</ul>
+							</div>
+					</li>
+				<% } else { %>
+					<li>
+						<a href="<%= item.href || '#' %>"><%- item.title %></a>
+					</li>
+				<%}%>
+				<% }) %>
+			</ul>
+
+		</div>
+	</div>
+
+</div>

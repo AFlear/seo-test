@@ -1,0 +1,71 @@
+////
+/// @group _system/
+////
+
+/// Уведомление о отключеном JavaScript
+.noscript-msg {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	clear: both;
+	font: normal normal 13px/1.2em map-get($font-family, main);
+	backface-visibility: hidden;
+	outline: none;
+	padding: 0;
+	margin: 0;
+	border-width: 0;
+
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+
+		&:checked + .noscript-msg__container {
+			display: none;
+		}
+	}
+
+	&__container {
+		padding: .75em 1.5em;
+		background-color: #f7fc9c;
+		border-top: 3px solid #f7b38b;
+
+		@include clearfix();
+	}
+
+	&__close {
+		display: none;
+		display: block;
+		float: right;
+		width: 1em;
+		height: 1em;
+		font-size: 3em;
+		margin-left: .5em;
+		text-align: center;
+		line-height: .8em;
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba(#000, .075);
+		}
+
+		&:active {
+			background-color: rgba(#000, .15);
+		}
+	}
+
+	&__content {
+		overflow: hidden;
+
+		> :first-child {
+			margin-top: 0;
+		}
+
+		p {
+			margin: .5em 0;
+		}
+	}
+}

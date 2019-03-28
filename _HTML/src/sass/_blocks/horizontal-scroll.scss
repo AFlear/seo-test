@@ -1,0 +1,62 @@
+////
+/// @group _blocks/
+////
+
+/// Описание
+.horizontal-scroll {
+	position: relative;
+	overflow: hidden;
+
+	&--left,
+	&--right {
+		cursor: ew-resize;
+	}
+
+	&--down {
+		user-select: none;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: rem(24px);
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity .2s ease;
+		z-index: 99;
+	}
+
+	&::before {
+		right: 100%;
+		box-shadow: 10px 0 8px -6px map-get($colors, black);
+
+		@at-root .horizontal-scroll--left#{&} {
+			opacity: .3;
+		}
+	}
+
+	&::after {
+		left: 100%;
+		box-shadow: -10px 0 8px -6px map-get($colors, black);
+
+		@at-root .horizontal-scroll--right#{&} {
+			opacity: .3;
+		}
+	}
+
+	&__holder {
+		max-width: 100%;
+		padding: 0;
+		margin: 0;
+		overflow-x: auto;
+	}
+
+	&__element {
+		max-width: 100%;
+		overflow: visible;
+		margin: 0;
+	}
+}

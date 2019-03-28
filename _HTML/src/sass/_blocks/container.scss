@@ -1,0 +1,27 @@
+////
+/// @group _blocks/
+////
+
+/// Описание
+.container {
+	width: 100%;
+	max-width: 1420px;
+	padding-left: map-get($gutters, def);
+	padding-right: map-get($gutters, def);
+	margin-left: auto;
+	margin-right: auto;
+	& &,
+	&--no-gap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&--tiny {
+		max-width: 980px;
+	}
+
+	&--full {
+		max-width: 100%;
+	}
+
+}

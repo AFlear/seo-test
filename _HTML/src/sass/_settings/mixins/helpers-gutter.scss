@@ -1,0 +1,74 @@
+////
+/// @group _settings/
+////
+
+/// Хедперы отступов
+/// @requires {mixin} media
+/// @param {Map} $points [()] - карта брейкпоинтов, для которых нужно сделать хелперы
+/// @param {Map} $gutters [()] - карта отступов, для которых нужно сделать хелперы
+@mixin helpers-gutter ($points: (), $gutters: ()) {
+	$sides: (
+		t: top,
+		r: right,
+		b: bottom,
+		l: left
+	);
+
+	$axis: (
+		tb: (top, bottom),
+		lr: (left, right),
+	);
+
+	$props: (
+		m: margin,
+		p: padding
+	);
+
+	@mixin sides($name, $prop, $suffix, $value, $mod: "") {
+		$start: #{$mod + $name};
+		$end: #{$sep + $suffix};
+
+		._#{$start + $end} {
+			#{$prop}: $value;
+		}
+		@each $side, $val in $sides {
+			._#{$start + $side + $end} {
+				#{$prop}#{-#{$val}}: $value;
+			}
+		}
+		@each $side, $val in $axis {
+			._#{$start + $side + $end} {
+				#{$prop}#{-#{nth($val, 1)}}: $value;
+				#{$prop}#{-#{nth($val, 2)}}: $value;
+			}
+		}
+	}
+
+	@each $name, $prop in $props {
+		@include sides($name, $prop, none, 0);
+		@each $point, $size in $points {
+			@include media($size) {
+				@include sides($name, $prop, none, 0, $point + $sep);
+			}
+		}
+
+		@if ($name == m) {
+			@include sides($name, $prop, auto, auto);
+			@each $point, $size in $points {
+				@include media($size) {
+					@include sides($name, $prop, auto, auto, $point + $sep);
+				}
+			}
+		}
+
+		@each $gap, $value in $gutters {
+			@include sides($name, $prop, $gap, $value);
+
+			@each $point, $size in $points {
+				@include media($size) {
+					@include sides($name, $prop, $gap, $value, $point + $sep);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,80 @@
+# закрываем листинг директорий из браузера
+Options -Indexes
+
+#указываем браузеру, что контент зависит от клиента
+#Header append Vary User-Agent
+
+#Добавляем обработку html html через php
+AddHandler application/x-httpd-php .html
+
+#Запрещаем выполнение скриптов
+AddHandler cgi-script .pl .py .jsp .asp .htm .shtml .sh .cgi
+
+#Добавляем скачивание файлов по умолчанию
+AddType application/octet-stream .doc .docx .mov .avi .pdf .xls .xlsx
+
+#Добавляем сжатие файлов
+<ifModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+    <IfModule mod_setenvif.c>
+        BrowserMatch ^Mozilla/4 gzip-only-text/html
+        BrowserMatch ^Mozilla/4\.0[678] no-gzip
+        BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    </IfModule>
+</ifModule>
+
+#Устанавливаем кеш в заголовках
+<ifModule mod_headers.c>
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=43200"
+    </FilesMatch>
+    <FilesMatch "\.(js|css|txt)$">
+        Header set Cache-Control "max-age=604800"
+    </FilesMatch>
+    <FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
+        Header set Cache-Control "max-age=2592000"
+    </FilesMatch>
+    <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+        Header unset Cache-Control
+    </FilesMatch>
+</IfModule>
+
+#Устанавливаем кеш для рерсурсов
+<ifModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 5 seconds"
+    ExpiresByType image/x-icon "access plus 2592000 seconds"
+    ExpiresByType image/jpeg "access plus 2592000 seconds"
+    ExpiresByType image/png "access plus 2592000 seconds"
+    ExpiresByType image/gif "access plus 2592000 seconds"
+    ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+    ExpiresByType text/css "access plus 604800 seconds"
+    ExpiresByType text/javascript "access plus 604800 seconds"
+    ExpiresByType application/javascript "access plus 604800 seconds"
+    ExpiresByType application/x-javascript "access plus 604800 seconds"
+    ExpiresByType text/html "access plus 43200 seconds"
+    ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</ifModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+    RewriteRule ^/?(.*) http://%1/$1 [L,R=permanent]
+
+    RewriteCond %{THE_REQUEST} ^GET\ .*/index\.php\ HTTP
+    RewriteRule ^(.*)index\.php$ /$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

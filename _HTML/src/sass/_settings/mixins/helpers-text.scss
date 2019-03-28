@@ -1,0 +1,43 @@
+////
+/// @group _settings/
+////
+
+/// Хедперы управления текстом
+/// @requires {mixin} media
+/// @param {Map} $points [()] - карта брейкпоинтов, для которых нужно сделать хелперы
+@mixin helpers-text ($points: ()) {
+	@mixin generate ($mod: "") {
+		._#{$mod}text-left {
+			text-align: left;
+		}
+
+		._#{$mod}text-right {
+			text-align: right;
+		}
+
+		._#{$mod}text-center {
+			text-align: center;
+		}
+
+		._#{$mod}ellipsis {
+			max-width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		._#{$mod}ellipsis-free {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+
+	@include generate();
+
+	@each $point, $size in $points {
+		@include media($size) {
+			@include generate($point + $sep);
+		}
+	}
+}

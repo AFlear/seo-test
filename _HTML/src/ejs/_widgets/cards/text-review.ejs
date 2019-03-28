@@ -1,0 +1,26 @@
+<%
+let {review={}} = app.entry
+let {
+	title = 'Имя Автора',
+	subtitle = 'Название огранизации',
+	text = 'Редизайн нашего сайта выполнен на высшем уровне, соблюдены сроки и учтены все наши пожелания. Ребята мастера своего дела и работать с ними одно удовольствие :)',
+} = review
+%>
+
+<div class="text-review">
+	<div class="text-review__content tshadow jsOpenPopup">
+		<%- new app.el.SvgIcon('quotes',null,{class:'text-review__icon'})%>
+		<div class="text-review__comment">
+			<%- text %>
+		</div>
+		<div class="text-review__more">
+			<span>Подробнее</span>
+		</div>
+	</div>
+	<div class="text-review__meta">
+		<div class="container">
+			<div class="text-review__title"><%- title %></div>
+			<div class="text-review__subtitle"><%- subtitle %></div>
+		</div>
+	</div>
+</div>

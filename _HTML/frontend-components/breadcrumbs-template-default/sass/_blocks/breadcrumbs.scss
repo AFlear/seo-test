@@ -1,0 +1,55 @@
+////
+/// @group frontend-components / breadcrumbs-template-default
+////
+
+/// Стили хлебных крошек
+/// @require {function} rem
+/// @require {variable} breakpoints
+/// @require {mixin} media
+.breadcrumbs {
+	position: relative;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: rem(18);
+	justify-content: center;
+
+	span {
+		color: #fff;
+		display: block;
+
+		&::after {
+			color: #fff;
+			content: '\00a0/\00a0';
+			padding: 0 5px;
+		}
+
+		&:last-child::after {
+			display: none;
+		}
+
+		@include media(def, max) {
+			display: none;
+
+			&:nth-last-child(2) {
+				display: block;
+
+				//&::before {
+				//	content: '\21d0';
+				//}
+			}
+
+			&:last-child {
+				display: block;
+			}
+		}
+	}
+
+	a {
+		color: #fff;
+
+		&:hover {
+			color: $color-brand;
+		}
+	}
+}

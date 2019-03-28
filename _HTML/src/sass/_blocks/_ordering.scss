@@ -1,0 +1,12 @@
+.form--ordering {
+	margin: auto;
+	margin-top: rem(60);
+	max-width: rem(700px);
+}
+
+.join-form {
+	.form-input,
+	.form-textarea {
+		border: none;
+	}
+}

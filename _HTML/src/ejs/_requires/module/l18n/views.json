@@ -1,0 +1,38 @@
+{
+	"Главная страница": {
+		"ru": "Главная страница",
+		"uk": "Головна сторінка",
+		"en": "Main page",
+		"pl": "Strona główna"
+	},
+	"Карта сайта": {
+		"ru": "Карта сайта",
+		"uk": "Карта сайту",
+		"en": "Site map",
+		"pl": "Mapa serwisu"
+	},
+	"UI Kit": {
+		"ru": "UI Kit",
+		"uk": "UI Kit",
+		"en": "UI Kit",
+		"pl": "UI Kit"
+	},
+	"UI SVG sprite": {
+		"ru": "UI SVG Icons",
+		"uk": "UI SVG Icons",
+		"en": "UI SVG Icons",
+		"pl": "UI SVG Icons"
+	},
+	"UI Типография": {
+		"ru": "UI Типография",
+		"uk": "UI Типографія",
+		"en": "UI Typography",
+		"pl": "UI Typografia"
+	},
+	"UI Формы": {
+		"ru": "UI Формы",
+		"uk": "UI Форми",
+		"en": "UI Forms",
+		"pl": "UI Formularze"
+	}
+}

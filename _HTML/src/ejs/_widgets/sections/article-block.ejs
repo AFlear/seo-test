@@ -1,0 +1,55 @@
+<%
+let blogCard = [
+	{
+		photo: '/Media/assets/images/news/new-1.jpg',
+		date: '21-17-2017',
+		title: 'Что такое PERFORMANCE marketing?',
+		subtitle: 'крупнейшая соцсеть обьявила о внедрении инструмента, помогающего компаниям и ссферы туризма продвигать свои услуги',
+		href: 'articles-item'
+	},
+	{
+		photo: '/Media/assets/images/news/new-2.jpg',
+		date: '21-17-2017',
+		title: 'Google tag manager: установка, подключение analytics и настройка целей',
+		subtitle: 'крупнейшая соцсеть обьявила о внедрении инструмента, помогающего компаниям и ссферы туризма продвигать свои услуги',
+		href: 'articles-item'
+	},
+	{
+		photo: '/Media/assets/images/news/new-3.jpg',
+		date: '21-17-2017',
+		title: 'Google не рекомендует удалять старый контент',
+		subtitle: 'крупнейшая соцсеть обьявила о внедрении инструмента, помогающего компаниям и ссферы туризма продвигать свои услуги',
+		href: 'articles-item'
+	},
+	{
+		photo: '/Media/assets/images/news/new-4.jpg',
+		date: '21-17-2017',
+		title: 'В яндекс.директе запущено открытое тестирование видеодополнений',
+		subtitle: 'крупнейшая соцсеть обьявила о внедрении инструмента, помогающего компаниям и ссферы туризма продвигать свои услуги',
+		href: 'articles-item'
+	},
+	{
+		photo: '/Media/assets/images/news/new-5.jpg',
+		date: '21-17-2017',
+		title: 'В facebook стала доступна динамическая реклама для сферы туризма',
+		subtitle: 'крупнейшая соцсеть обьявила о внедрении инструмента, помогающего компаниям и ссферы туризма продвигать свои услуги',
+		href: 'articles-item'
+	},
+	{
+		photo: '/Media/assets/images/news/new-6.jpg',
+		date: '21-17-2017',
+		title: 'Обновления от Яндекс.вебмастера: рекомендуемые страницы и еженедельная свободная информация по сайту',
+		subtitle: 'крупнейшая соцсеть обьявила о внедрении инструмента, помогающего компаниям и ссферы туризма продвигать свои услуги',
+		href: 'articles-item'
+	}
+]
+%>
+
+
+<div class="section ">
+	<div class="container">
+		<div class="grid grid--def-3 grid--md-2 grid--1">
+			<%- app.widget('cards/blog-card.ejs', {blogCard})%>
+		</div>
+	</div>
+</div>

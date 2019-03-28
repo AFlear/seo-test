@@ -1,0 +1,139 @@
+////
+/// @group _blocks/
+////
+
+/// Description
+//.sitemap {
+//	a {
+//		color: map-get($colors, link);
+//
+//		&:hover {
+//			color: map-get($colors, link-hover);
+//		}
+//
+//		&:active {
+//			color: map-get($colors, link-active);
+//		}
+//	}
+//}
+
+.demo{
+	border: none;
+	background-image: url(/Media/assets/images/backgrounds/dot-pattern.png);
+}
+// общие правила
+.sitemap {
+	//max-width: $md;
+	padding: 1rem;
+	background-color: rgba(255, 255, 255, 0.72);
+	position: relative;
+	font-size: 1rem;
+	margin-bottom: 1.5rem;
+
+	@include media(md) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0 0 0 2em;
+		margin: 0;
+	}
+
+	li {
+		list-style: none;
+		line-height: 1.4em;
+	}
+
+	a {
+		padding: .2em 1em .2em .5em;
+		display: block;
+		font: 300 1rem/1.2em 'Proxima Nova', sans-serif;
+		color: $color-brand;
+		transition: 0.2s linear;
+
+		&:visited {
+			color: $color-brand;
+		}
+
+		&:hover {
+			color: #fff;
+			text-decoration: underline;
+			background-color: $color-brand;
+		}
+
+		&:active {
+			color: $color-brand;
+			background-color: rgba(255, 185, 0, 0.46);
+		}
+	}
+}
+
+// первый уровень вложенности
+.sitemap > ul {
+	padding: 0;
+	margin: 1em 0;
+	position: relative;
+	overflow: hidden;
+}
+
+// второй уровень
+// без паддингов
+.sitemap > ul > li > ul {
+	padding-left: 0;
+}
+
+// все остальные уровни
+.sitemap > ul ul { // sass-lint:disable-line force-element-nesting
+	list-style: none;
+	padding: 0 0 0 2em;
+	margin: 0;
+}
+
+// внутрение элементы
+// начиная со второго уровня вложености
+.sitemap > ul ul li { // sass-lint:disable-line force-element-nesting
+	position: relative;
+	margin: .1em 0;
+	&:last-child { // sass-lint:disable-line empty-line-between-blocks
+		> a:only-child {
+			&::before {
+				background-image: url("/Media/assets/images/icons/sitemap-end.svg");
+			}
+		}
+	}
+
+	&:hover {
+		background-color: rgb(255, 255, 255);
+	}
+
+	a {
+		position: relative;
+		padding-left: 2.5em;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: .2em;
+			width: 1600px;
+			height: 1.4em;
+			text-align: right;
+			opacity: .3;
+			background: transparent repeat-x center right;
+		}
+
+		&::before {
+			left: 0;
+			width: 2em;
+			background-image: url("/Media/assets/images/icons/sitemap-start.svg");
+		}
+
+		&::after {
+			right: 100%;
+			background-image: url("/Media/assets/images/icons/sitemap-middle.svg");
+		}
+
+	}
+}

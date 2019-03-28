@@ -1,0 +1,74 @@
+<%
+let services = [
+	{
+		icon: '/Media/assets/images/icons/seo.svg',
+		title: 'Комплексное продвижение',
+		list: [
+			{text: 'Контекстная реклама Google и Яндекс'},
+			{text: 'Продвижение сайта в Яндексе и Google'},
+			{text: 'SMM Продвижение'},
+			{text: 'Вывод из под фильтров Яндекс и Google'},
+			{text: 'Сбор семантического ядра'}
+		]
+	},
+	{
+		icon: '/Media/assets/images/icons/seo.svg',
+		title: 'Аудит сайта',
+		list: [
+			{text: 'Технический Аудит сайта'},
+			{text: 'Юзабилити Аудит сайта'},
+			{text: 'SMM Продвижение'}
+		]
+	},
+	{
+		icon: '/Media/assets/images/icons/seo.svg',
+		title: 'Разработка сайтов',
+		list: [
+			{text: 'Интернет-магазин'},
+			{text: 'Сайт визитка'},
+			{text: 'Лендинг пейдж'},
+			{text: 'Корпоративный сайт'},
+			{text: 'Разработка мобильной версии'}
+		]
+	}
+]
+%>
+
+<div class="services-container">
+	<div class="container">
+		<div class="grid _justify-center">
+			<div class="gcell gcell--12 gcell--md-10">
+				<div class="services-list">
+					<div class="grid grid--1 grid--md-3 grid--md-hspace-xl grid--vspace-def">
+						<% services.forEach(service=>{ %>
+						<div class="gcell ">
+							<div class="service">
+								<div class="service__icon">
+									<img src="<%= service.icon %>" alt="">
+								</div>
+
+								<div class="service__title">
+									<a href="<%= service.href || '#' %>">
+										<%= service.title %>
+									</a>
+								</div>
+
+								<% if (service.list) { %>
+								<ul class="service__list">
+									<% service.list.forEach(item=>{ %>
+									<li>
+										<a href="<%= item.href || '#' %>"><%= item.text %></a>
+									</li>
+									<% }) %>
+								</ul>
+								<% } %>
+							</div>
+						</div>
+
+						<% }) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

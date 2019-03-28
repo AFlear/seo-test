@@ -1,0 +1,11 @@
+////
+/// critical/common.scss
+////
+
+// Один общий критикал файл для всех страниц
+// -------------------------------------------------
+
+@import "../_settings/all";
+
+@import "normalize.css/normalize";
+@import "../_system/html-tags";

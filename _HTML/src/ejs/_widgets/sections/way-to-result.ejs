@@ -1,0 +1,54 @@
+<%
+let advantages = [
+	{
+		icon: '/Media/assets/images/icons/advantage1.png',
+		title: 'исследования',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci corporis dolores id incidunt ipsum laboriosam laudantium officiis omnis totam?'
+	},
+	{
+		icon: '/Media/assets/images/icons/advantage2.png',
+		title: 'дизайн',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+	},
+	{
+		icon: '/Media/assets/images/icons/advantage3.png',
+		title: 'разработка',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci corporis dolores id incidunt ipsum laboriosam '
+	},
+	{
+		icon: '/Media/assets/images/icons/advantage4.png',
+		title: 'тестирование',
+		text: 'Lorem ipsum dolor sit amet, consectetur '
+	},
+	{
+		icon: '/Media/assets/images/icons/advantage5.png',
+		title: 'продвижение',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci corporis dolores '
+	}
+]
+%>
+
+<div class="section _bgcolor-bg">
+	<div class="container">
+		<div class="section__title">Путь к достижению результата</div>
+		<div class="section__subtitle">Описание преимущества описание преимущества описание преимущества описание
+			<br> преимущества описание преимущества описание преимущества описание преимущества
+			<br>описание преимущества
+		</div>
+	</div>
+	<div class="advantages-container">
+		<div class="container">
+			<div class="advantages-list">
+				<% advantages.forEach(advantage=>{ %>
+				<div class="advantage">
+					<div class="advantage__icon"><%- new app.el.SvgIcon('helpful5')%></div>
+					<div class="advantage__body">
+						<div class="advantage__title"><%= advantage.title %></div>
+						<div class="advantage__text"><%= advantage.text %></div>
+					</div>
+				</div>
+				<% }) %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+<%
+	/** Плашка с уведомлением об отключенном JavaScript
+	 * @name noscript.ejs */
+
+	// выгружаем инструменты
+	const {media, comment, __} = app.module;
+-%>
+
+<%- comment.php('Плашка с уведомлением об отключенном JavaScript') %>
+<noscript>
+	<link rel="stylesheet" href="<%- media('assets/css/noscript.css') %>">
+	<div class="noscript-msg">
+		<input id="noscript-msg__input" class="noscript-msg__input" type="checkbox" title="<%- __('Закрыть') %>">
+		<div class="noscript-msg__container">
+			<label class="noscript-msg__close" for="noscript-msg__input">&times;</label>
+			<div class="noscript-msg__content">
+				<p><%- __('Отключен JavaScript строка 1') %></p>
+				<p><%- __('Отключен JavaScript строка 2') %></p>
+			</div>
+		</div>
+	</div>
+</noscript>

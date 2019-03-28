@@ -1,0 +1,52 @@
+<!-- Mobile menu -->
+<nav data-menu style="display: none;" class="is-initial js-init">
+	<header>
+		<button class="mobile-menu__button mobile-menu__button--back" data-menu-trigger="prev">
+			<%- new app.el.SvgIcon('arrow-left') %>
+		</button>
+		<div class="mobile-menu__level-title" data-menu-field="menuTitle"><%- new app.el.SvgIcon('logo-el') %></div>
+		<button class="mobile-menu__button" data-menu-trigger="close">
+			<%- new app.el.SvgIcon('close') %>
+		</button>
+	</header>
+	<% let generateMultiLevelMenu = function(menu){ %>
+	<ul>
+		<% menu.forEach((menuItem)=>{ %>
+
+		<li class="">
+			<a href="<%= menuItem.href || '#' %>"><%- menuItem.title %></a>
+			<% if(menuItem.dropmenu){ %>
+			<%- generateMultiLevelMenu(menuItem.dropmenu) %>
+			<% } %>
+		</li>
+		<% }) %>
+	</ul>
+	<% } %>
+	<%- generateMultiLevelMenu(app.mainMenu) %>
+	<footer>
+		<div class="icon-term _mr-def">
+			<div class="icon-term__icon">
+				<%- new app.el.SvgIcon('phone') %>
+			</div>
+			<div class="icon-term__body icon-term__body--one-row">
+				<a href="tel:+38 099 123-45-67">
+					+38 099 123-45-67
+				</a>
+				<br>
+				<a href="tel:+38 099 123-45-67">
+					+38 099 123-45-67
+				</a>
+			</div>
+		</div>
+		<div class="icon-term _mr-def" style="color:#686259">
+			<div class="icon-term__icon">
+				<%- new app.el.SvgIcon('location') %>
+			</div>
+			<div class="icon-term__body">
+				г.Киев, бул.Шевченко, 28<br>
+				Пн-пт: 9:00 - 19:00, сб-вс: 9:00 - 15:00
+			</div>
+		</div>
+	</footer>
+</nav>
+<!-- /Mobile menu -->

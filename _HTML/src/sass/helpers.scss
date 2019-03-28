@@ -1,0 +1,55 @@
+////
+/// @group style.scss
+////
+
+// сбор всех утилит (классов хелперов) в одном файле
+// так как эти блоки меняются очень редко
+// это позволит снизить нагрузку на редер основных стилей
+// за счет уменьшения количества лишних действий
+// -------------------------------------------------
+
+@import "_settings/all";
+
+/// Карта брейкпоинтов для использования в хелперах
+/// @type Map
+$custom-breakpoints: (
+	// st: map-get($breakpoints, st),
+	xs: map-get($breakpoints, xs),
+	// psw: map-get($breakpoints, psw),
+	sm: map-get($breakpoints, sm),
+	ms: map-get($breakpoints, ms),
+	// psh: map-get($breakpoints, psh),
+	md: map-get($breakpoints, md),
+	def: map-get($breakpoints, def),
+	lg: map-get($breakpoints, lg),
+	xl: map-get($breakpoints, xl),
+	// mg: map-get($breakpoints, mg),
+	// dt: map-get($breakpoints, dt)
+);
+
+/// Карта отступов для использования в хелперах
+/// @type Map
+$custom-gutters: (
+	none: map-get($gutters, none),
+	sm: map-get($gutters, sm),
+	ms: map-get($gutters, ms),
+	md: map-get($gutters, md),
+	def: map-get($gutters, def),
+	lg: map-get($gutters, lg),
+	xl: map-get($gutters, xl),
+	// mg: map-get($gutters, mg),
+	// dt: map-get($gutters, dt)
+);
+
+// helpers
+@include helpers-color($colors);
+@include helpers-grid(12, $custom-breakpoints, $custom-gutters);
+@include helpers-cols(5, $custom-breakpoints);
+@include helpers-flex($custom-breakpoints);
+@include helpers-float($custom-breakpoints);
+@include helpers-gutter($custom-breakpoints, $custom-gutters);
+@include helpers-text($custom-breakpoints);
+@include helpers-show-hide($custom-breakpoints);
+
+// стили для печати
+@import "_system/print";

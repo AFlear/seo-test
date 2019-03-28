@@ -1,0 +1,19 @@
+<%
+	let {
+	    title = 'title',
+		image = 'assets'
+	} = app.entry;
+%>
+
+<div class="section--breadcrumbs _bg-image-cover b-lazy" data-src="<%- app.module.media(image) %>">
+	<div class="section--breadcrumbs__title"> <%- title %> </div>
+
+	<%- (function () {
+		const folder = 'breadcrumbs-template-default/ejs/';
+		const widget = folder + '_widgets/breadcrumbs.ejs';
+		const components = app.data.ejsPaths.components;
+		/** @see frontendComponents.breadcrumbsWidget */
+		return app.widget(widget, components, {folder});
+	})() %>
+
+</div>

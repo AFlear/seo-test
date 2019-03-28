@@ -1,0 +1,28 @@
+<%
+	app.setLayout('error.ejs');
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+	// выгружаем инструменты
+	const {currentView, testOne, paths} = app.data;
+	const {__} = app.module;
+
+
+-%>
+<div class="section">
+	<div class="container _ptb-lg">
+		<div class="title">
+			404. К сожалению, страница, которую Вы запросили, не была найдена</div>
+
+		<div class="wysiwyg">
+			<p class="_ellipsis">
+				<code id="location-href"></code>
+			</p>
+		</div>
+
+		<div class="wysiwyg">
+		</div>
+	</div>
+</div>

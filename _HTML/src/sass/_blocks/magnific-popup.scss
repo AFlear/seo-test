@@ -1,0 +1,44 @@
+////
+/// @group _blocks/
+////
+
+/// Description
+.mfp-bg {
+	//opacity: .95;
+}
+
+button.mfp-close {
+	height: rem(70);
+	width: rem(70);
+	border: 4px solid map-get($colors, primary);
+	color: map-get($colors, primary);
+}
+
+.magnific-popup {
+	position: relative;
+	height: auto;
+	width: 100%;
+	margin: 0;
+	padding: map-get($gutters, def);
+	@include media(md, max) {
+		padding: 0;
+		.section__title {
+			font-size: rem(18);
+		}
+	}
+
+	&--sm {
+		width: map-get($breakpoints, sm);
+	}
+	.section__title {
+		font-size: rem(30);
+		margin-bottom: rem(45);
+		padding: 0 rem(70);
+		line-height: rem(70);
+
+	}
+	.mfp-close {
+		color: map-get($colors, primary);
+	}
+
+}

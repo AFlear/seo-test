@@ -1,0 +1,34 @@
+////
+/// @group _blocks/
+////
+
+/// price-order
+
+.price-order {
+	@include resp-val(10, 130, 320, 1440, 'padding-top');
+	&__title {
+		@include resp-val(16, 30, 320, 1920, 'font-size');
+		font-weight: 900;
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+		@include resp-val(10, 50, 320, 1440, 'padding-bottom');
+		line-height: rem(60);
+		@include media(md, max) {
+			line-height: rem(30);
+		}
+	}
+	&__subtitle {
+		font-weight: normal;
+		font-size: rem(16);
+		color: #fff;
+		text-align: center;
+	}
+	&__btext {
+		font-family: 'MuseoSansCyrl';
+		@include resp-val(30, 115, 320, 1920);
+		//font-weight: 900;
+		text-align: center;
+		color: #fff;
+	}
+}

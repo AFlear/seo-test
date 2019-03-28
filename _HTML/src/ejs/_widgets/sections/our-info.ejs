@@ -1,0 +1,47 @@
+<%
+let listInfo = [
+	{
+		icon: '/Media/assets/images/icons/about1.svg',
+		title: 'год основания',
+		value: '2017'
+	},
+	{
+		icon: '/Media/assets/images/icons/about2.svg',
+		title: 'Проектов более',
+		value: '350'
+	},
+	{
+		icon: '/Media/assets/images/icons/about3.svg',
+		title: 'Сотрудников свыше',
+		value: '50'
+	},
+	{
+		icon: '/Media/assets/images/icons/about4.svg',
+		title: 'Офисы',
+		value: '2'
+	}
+]
+%>
+
+<div class="section">
+	<div class="our-info-container">
+		<div class="container">
+			<div class="grid _justify-center">
+				<div class="gcell gcell--10">
+					<div class="our-info-list">
+						<% listInfo.forEach(info=>{ %>
+						<div class="info">
+							<div class="info__icon"><img src="<%= info.icon %>" alt=""></div>
+							<div class="info__body">
+								<div class="info__title"><%= info.title %></div>
+								<div class="info__separator"></div>
+								<div class="info__value"><%= info.value %></div>
+							</div>
+						</div>
+						<% }) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

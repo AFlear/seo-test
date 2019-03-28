@@ -1,0 +1,77 @@
+<div class="magnific-popup _dark-bg ">
+	<div class="container">
+		<form  class="form	form--ordering js-form" data-ajax="response/demo.json">
+			<button class="mfp-close" type="button">x</button>
+			<div class="section__title">Оставить отзыв</div>
+			<div class="form-min">
+				<div class="form-group  _fg-r">
+					<input class="form-input"
+							data-rule-minlength="2"
+							id="input__name"
+							required
+							placeholder="ФИО"
+							type="text"
+							name="name" >
+						<label class="control-label"
+								for="input__name" >
+							ФИО
+						</label>
+				</div>
+				<div class="form-group  _def-pl-ms">
+					<input class="form-input"
+							id="input__speciality"
+							placeholder="Должность"
+							type="text"
+							name="speciality" >
+					<label class="control-label" for="input__speciality" >Должность</label>
+				</div>
+				<div class="form-group  _fg-r">
+					<input class="form-input"
+							id="input__company"
+							data-rule-minlength="2"
+							placeholder="Компания"
+							type="text"
+							name="company" >
+					<label class="control-label" for="input__company" >Компания</label>
+				</div>
+				<div class="form-group _def-pl-ms">
+					<input class="form-input"
+							id="input__city"
+							type="text"
+							name="city"
+							placeholder="Город">
+					<label class="control-label" for="input__city" >Город</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<input class="form-input"
+						id="input__mail"
+						required
+						type="email"
+						name="email"
+						placeholder="Ваш email*">
+				<label class="control-label" for="input__mail" >Ваш email*</label>
+			</div>
+			<div class="form-group">
+				<input class="form-input"
+						id="input__site"
+						required type="url"
+						placeholder="Ваш сайт"
+						name="site" >
+				<label class="control-label" for="input__site" >Ваш сайт</label>
+			</div>
+			<div class="form-group">
+				<textarea class="form-textarea"
+						id="input__comment"
+						required
+						data-rule-minlength="5"
+						name="comment"
+						placeholder="Ваш отзыв">
+				</textarea>
+				<label class="control-label" for="input__comment">Ваш отзыв</label>
+			</div>
+			<div class="_color-white _mb-def" style="font-size: 14px;">* Поля обязательные для заполнения</div>
+			<button type="submit" class="button button--primary button--block">Оставить отзыв</button>
+		</form>
+	</div>
+</div>

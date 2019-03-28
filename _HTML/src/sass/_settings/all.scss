@@ -1,0 +1,40 @@
+////
+/// @group _settings
+////
+
+// functions
+// ================================
+@import "functions/em-rem";
+@import "functions/responsive-size";
+
+// variables
+// ================================
+@import "variables/flags";
+@import "variables/colors";
+@import "variables/colors-network";
+@import "variables/fonts";
+@import "variables/separators";
+@import "variables/breakpoints";
+@import "variables/devices";
+@import "variables/orientations";
+@import "variables/gutters";
+
+// mixins
+// ================================
+@import "mixins/media";
+@import "mixins/clearfix";
+@import "mixins/placeholder";
+
+@import "mixins/helpers-color";
+@import "mixins/helpers-cols";
+@import "mixins/helpers-flex";
+@import "mixins/helpers-float";
+@import "mixins/helpers-grid";
+@import "mixins/helpers-gutter";
+@import "mixins/helpers-show-hide";
+@import "mixins/helpers-text";
+@import "mixins/helpers-size";
+
+//плавная адаптация
+@import "mixins/responsive-value";
+

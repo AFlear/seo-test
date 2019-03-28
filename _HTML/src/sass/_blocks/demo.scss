@@ -1,0 +1,11 @@
+////
+/// @group _blocks/
+////
+
+/// Демо блок
+.demo {
+	border: 1px solid map-get($colors, gray);
+	padding: map-get($gutters, def);
+	border-radius: map-get($gutters, sm);
+	margin-bottom: map-get($gutters, def);
+}

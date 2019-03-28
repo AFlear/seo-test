@@ -1,0 +1,34 @@
+.icon-term {
+	display: flex;
+	align-items: center;
+	color: #8d8d8d;
+	font-size: rem(13);
+	font-family: 'Arial', serif;
+
+	&__icon {
+		flex-shrink: 0;
+		height: rem(40);
+		width: rem(40);
+		background-color: map-get($colors, 'primary');
+		border-radius: 50%;
+		position: relative;
+		fill: #fff;
+		margin-right: rem(20);
+		svg {
+			@extend %abs-center;
+			@include max-size(50%)
+		}
+	}
+	&__body {
+		&--one-row {
+			font-size: rem(18);
+		}
+		a {
+			&:hover {
+				text-decoration: underline;
+				color: map-get($colors, primary);
+			}
+		}
+	}
+
+}

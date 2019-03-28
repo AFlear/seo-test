@@ -1,0 +1,25 @@
+<%
+/** Шаблон  страницы  выбранной Услуги
+ * @name subpage.ejs */
+
+/** установка основного лейаута */
+app.setLayout('base.ejs');
+
+/** расширение глобального объекта app
+ * @see module:core */
+app.require('core.js')(app);
+
+// выгружаем инструменты
+
+const {currentView} = app.data;
+
+	let title = "Комплексное продвижение";
+	let image = 'assets/images/breadcrumbs/complex.jpg';
+%>
+
+<%- app.widget('sections/breadcrumbs.ejs', {title, image}) %>
+<%- app.widget('sections/write-us.ejs')%>
+<%- app.widget('sections/list-tariffs-subpage.ejs')%>
+<%- app.widget('wysiwyg/wysiwyg-services.ejs')%>
+<%- app.widget('sections/partners.ejs')%>
+<%- app.widget('sections/order-form.ejs')%>

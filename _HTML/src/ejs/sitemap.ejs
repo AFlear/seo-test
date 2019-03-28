@@ -1,0 +1,22 @@
+<%
+	/** Шаблон главной страницы
+	 * @name ui.ejs */
+
+	/** установка основного лейаута */
+	app.setLayout('base.ejs');
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+	// выгружаем инструменты
+	const {currentView} = app.data;
+-%>
+<div class="section">
+	<div class="container _ptb-lg">
+		<div class="title"><%- currentView.title %></div>
+		<div class="demo">
+			<%- app.widget('sitemap-list.ejs') %>
+		</div>
+	</div>
+</div>

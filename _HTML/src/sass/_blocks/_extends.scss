@@ -1,0 +1,18 @@
+%abs-center {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+@mixin max-size($width,$height:false){
+	max-width: $width;
+	@if not $height == false {
+		max-height: $height
+	}
+	@else{
+		max-height: $width;
+	}
+}

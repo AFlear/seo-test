@@ -1,0 +1,13 @@
+////
+/// @group _settings/
+////
+
+/// Хелпер управления максимальным размером
+@mixin max-size($width, $height: false) {
+	max-width: $width;
+	@if ($height == false) {
+		max-height: $width;
+	} @else {
+		max-height: $height;
+	}
+}

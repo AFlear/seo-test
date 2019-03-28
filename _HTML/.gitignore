@@ -1,0 +1,22 @@
+# документация по исходному коду
+/api-docs/
+
+# макеты дизайна
+/design/
+
+# IDE
+.idea/
+
+# системные файлы
+.DS_Store
+thumbs.db
+*.log*
+
+# tmp файлы
+tmp/
+
+# Зависимости
+node_modules/
+
+# webpack cтатистика
+webpack.stats.json

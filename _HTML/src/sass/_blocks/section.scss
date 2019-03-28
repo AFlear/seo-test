@@ -1,0 +1,78 @@
+////
+/// @group _blocks/
+////
+
+/// Описание
+.section {
+	position: relative;
+	@include resp-val(20, 60, 320, 1440, 'padding-top');
+	@include resp-val(20, 60, 320, 1440, 'padding-bottom');
+	&__title {
+		@include resp-val(20, 30, 320, 1440, 'font-size');
+		font-weight: 900;
+		color: #333333;
+		text-align: center;
+		text-transform: uppercase;
+		._dark-bg & {
+			color: #fff;
+		}
+		& + .section__subtitle {
+			@include resp-val(10, 30, 320, 1440, 'margin-top');
+		}
+	}
+
+	&__subtitle {
+		@include resp-val(12, 16, 320, 1440, 'font-size');
+		text-align: center;
+		line-height: em(26, 16);
+		color: #808b9b;
+		._dark-bg & {
+			color: #fff;
+		}
+		@include media(md, max) {
+			br {
+				display: none;
+			}
+		}
+	}
+	&--sm {
+		@include resp-val(20, 40, 320, 1440, 'padding-top');
+		@include resp-val(20, 40, 320, 1440, 'padding-bottom');
+	}
+	&--upper-bg {
+		position: relative;
+		z-index: 3;
+		@include resp-val(20, 140, 320, 1440, 'padding-top');
+		@include resp-val(20, 40, 320, 1440, 'padding-bottom');
+	}
+
+	&--breadcrumbs {
+		@include resp-val(50, 240, 320, 1920, 'padding-top');
+		@include resp-val(40, 230, 320, 1920, 'padding-bottom');
+		background-position: 100% 100%;
+		&__title {
+			margin: 0 10%;
+			line-height: 1.3;
+			@include resp-val(14, 60, 320, 1920);
+			text-align: center;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: #fff;
+		}
+	}
+	&--error {
+		@include resp-val(500, 600, 768, 1920, 'padding-top');
+		@include resp-val(20, 65, 320, 1920, 'padding-bottom');
+		@include media(md, max) {
+			padding-top: 50px;
+		}
+		&__title {
+			line-height: 1.3;
+			@include resp-val(16, 26, 320, 1920);
+			text-align: center;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: #333;
+		}
+	}
+}

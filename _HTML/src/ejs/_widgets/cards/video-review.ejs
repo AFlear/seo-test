@@ -1,0 +1,26 @@
+<%
+let {review={}} = app.entry
+let {
+	url = 'https://www.youtube.com/watch?v=25o6ARxViT0',
+	image = '/Media/assets/images/reviews/img-bg.jpg',
+	title = 'Имя Автора Отзыва',
+	subtitle = 'Название компании'
+} = review
+%>
+
+<div class="video">
+	<div class="video__content jsOpenPopup-v">
+		<a href="<%- url %>" >
+			<div class="video__content">
+				<!--размер изображения 460*306-->
+				<img class="vshadow" src="/Media/assets/images/placeholders/460x306.png" data-lazy="<%- image %>" alt=""/>
+				<span class="video__icon"></span>
+			</div>
+
+		</a>
+	</div>
+	<div class="video__meta">
+			<div class="video__title"><%- title %></div>
+			<div class="video__subtitle"><%- subtitle %></div>
+	</div>
+</div>

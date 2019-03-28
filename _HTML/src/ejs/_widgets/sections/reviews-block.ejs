@@ -1,0 +1,35 @@
+<div class="section _bg-image-cover _dark-bg b-lazy" data-src="/Media/assets/images/backgrounds/dark-abstract.jpg">
+	<div class="container">
+		<div class="section__title">О нас говорят</div>
+		<div class="section__subtitle">Описание преимущества описание преимущества описание преимущества
+			описание
+			<br> преимущества описание преимущества описание преимущества описание преимущества
+			<br>описание преимущества
+		</div>
+		<!-- Количество слайдов в этом блоке и в слайдере ниже должно совпадать!! -->
+		<div class="_mt-lg js-init reviews-slider reviews-slider--video"
+			 data-slick
+			 data-sync="video-reviews"
+			 data-preset="video-reviews">
+			<% for (let i = 0; i < 12; i++) { %>
+			<%- app.widget('cards/video-review.ejs') %>
+			<% } %>
+		</div>
+		<div class="reviews-slider-dots"></div>
+	</div>
+</div>
+<div class="section _bgcolor-bg">
+	<div class="container">
+		<!-- Количество слайдов в этом блоке и в слайдере выше должно совпадать!! -->
+		<div class="reviews-slider js-init reviews-slider--text" data-slick
+			 data-sync="text-reviews"
+			 data-preset="text-reviews">
+			<% for (let i = 0; i < 12; i++) { %>
+				<%- app.widget('cards/text-review.ejs') %>
+			<% } %>
+		</div>
+		<div class="grid grid--3 grid--md-6 _justify-center _ms-pt-lg">
+			<a href="text-reviews" class="button button--secondary">Все отзывы</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,173 @@
+////
+/// @group _settings/
+////
+
+/// Flex сетка
+/// @require {mixin} media
+/// @param {Size} $columns [12] - количество колонок
+/// @param {Map} $points [()] - карта брейкпоинтов, для которых нужно сделать хелперы
+/// @param {Map} $gutters [()] - карта отступов, для которых нужно сделать хелперы
+@mixin helpers-grid($columns: 12, $points: (), $gutters: ()) {
+	@mixin width($width) {
+		flex-basis: $width;
+		width: $width;
+		max-width: $width;
+	}
+
+	@mixin h-space($gap, $size, $mod: "") {
+		&--#{$mod}hspace-#{$gap} {
+			margin-left: -$size;
+
+			> * { // sass-lint:disable-line no-universal-selectors
+				padding-left: $size;
+			}
+		}
+	}
+
+	@mixin h-spaces($gap, $size, $mod: "") {
+		&--#{$mod}hspaces-#{$gap} {
+			margin-left: -($size / 2);
+			margin-right: -($size / 2);
+
+			> * { // sass-lint:disable-line no-universal-selectors
+				padding-left: ($size / 2);
+				padding-right: ($size / 2);
+			}
+		}
+	}
+
+	@mixin v-space($gap, $size, $mod: "") {
+		&--#{$mod}vspace-#{$gap} {
+			> * { // sass-lint:disable-line no-universal-selectors
+				padding-bottom: $size;
+			}
+		}
+	}
+
+	@mixin v-spaces($gap, $size, $mod: "") {
+		&--#{$mod}vspaces-#{$gap} {
+			> * { // sass-lint:disable-line no-universal-selectors
+				padding-top: ($size / 2);
+				padding-bottom: ($size / 2);
+			}
+		}
+	}
+
+	@mixin space($gap, $size, $mod: "") {
+		&--#{$mod}space-#{$gap} {
+			margin-left: -$size;
+
+			> * { // sass-lint:disable-line no-universal-selectors
+				padding-left: $size;
+				padding-bottom: $size;
+			}
+		}
+	}
+
+	@mixin spaces($gap, $size, $mod: "") {
+		&--#{$mod}spaces-#{$gap} {
+			margin-left: -($size / 2);
+			margin-right: -($size / 2);
+
+			> * { // sass-lint:disable-line no-universal-selectors
+				padding: ($size / 2);
+			}
+		}
+	}
+
+	// контейнер
+	.grid {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		// отступы
+		@each $gap, $value in $gutters {
+			@include h-space($gap, $value);
+			// @include h-spaces($gap, $value);
+			@include v-space($gap, $value);
+			// @include v-spaces($gap, $value);
+			@include space($gap, $value);
+			// @include spaces($gap, $value);
+
+			@each $point, $size in $points {
+				@include media($size) {
+					@include h-space($gap, $value, $point + $sep);
+					// @include h-spaces($gap, $value, $point + $sep);
+					@include v-space($gap, $value, $point + $sep);
+					// @include v-spaces($gap, $value, $point + $sep);
+					@include space($gap, $value, $point + $sep);
+					// @include spaces($gap, $value, $point + $sep);
+				}
+			}
+		}
+
+		// Создаем классы по схеме .grid--3 > .gcell
+		@for $i from 1 through $columns {
+			/// @access private
+			/// @type {Size}
+			$width: percentage($columns / $i / $columns);
+
+			&--#{$i} {
+				& > * { // sass-lint:disable-line no-universal-selectors
+					@include width($width);
+				}
+			}
+
+			// с медиа-запросами по схеме .grid--lg-3 > .gcell
+			@each $point, $size in $points {
+				@include media($size) {
+					&--#{$point}-#{$i} {
+						& > * { // sass-lint:disable-line no-universal-selectors
+							@include width($width);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// ячейки
+	.gcell { // sass-lint:disable-line no-universal-selectors
+		min-width: 0;
+		min-height: 1px;
+		box-sizing: border-box;
+
+		&--auto {
+			@include width(auto);
+		}
+
+		// с медиа-запросами по схеме .gcell--lg-auto
+		@each $point, $size in $points {
+			@include media($size) {
+				&--#{$point}-auto {
+					@include width(auto);
+				}
+			}
+		}
+
+		// Создаем классы по схеме .gcell--3
+		@for $i from 1 through $columns {
+			$width: percentage($i / $columns);
+
+			&--#{$i} {
+				@include width($width);
+			}
+		}
+
+		//  с медиа-запросами по схеме .gcell--lg-auto
+		@each $point, $size in $points {
+			@include media($size) {
+				@for $i from 1 through $columns {
+					$width: percentage($i / $columns);
+
+					&--#{$point}-#{$i} {
+						@include width($width);
+					}
+				}
+			}
+		}
+	}
+}

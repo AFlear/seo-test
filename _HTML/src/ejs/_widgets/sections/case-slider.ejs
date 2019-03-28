@@ -1,0 +1,38 @@
+<div class="case-slider-container">
+	<div class="case-slider js-init"
+			data-slick
+			data-preset="case">
+		<div class="case-slider__slide" style="background-image: url(/Media/assets/images/slides/case-slide.jpg);">
+			<div class="case-slider__slide-content case-info">
+				<div class="case-info__company-name">Название компании</div>
+				<a href="#" class="case-info__company-site">www.company.com</a>
+				<div class="case-info-rates">
+					<div class="case-info-rates__title">Ежемесячные коммерческие результаты, которых мы добились:</div>
+				</div>
+			</div>
+		</div>
+		<div class="case-slider__slide" style="background-image: url(/Media/assets/images/slides/case-slide.jpg);">
+			<div class="case-slider__slide-content case-info">
+				<div class="case-info__company-name">Название компании1</div>
+				<a href="#" class="case-info__company-site">www.company.com</a>
+				<div class="case-info-rates">
+					<div class="case-info-rates__title">Описание о результатах, компании..</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="case-slider-fixed">
+		<div class="section _dark-bg">
+			<div class="section__title">Наши кейсы</div>
+			<div class="section__subtitle">Мы следуем лучшим мировым трендам. Умеем слушать и слышать наших клиентов.
+				Видим суть и находим яркие решения для каждого проекта
+			</div>
+		</div>
+	</div>
+	<button class="case-slider__arrow case-slider__arrow--left slick-prev" id="sArrowLeft">
+		<%- new app.el.SvgIcon('arrow-left') %>
+	</button>
+	<button class="case-slider__arrow case-slider__arrow--right slick-next" id="sArrowRight">
+		<%- new app.el.SvgIcon('arrow-right') %>
+	</button>
+</div>

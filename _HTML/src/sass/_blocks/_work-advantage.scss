@@ -1,0 +1,146 @@
+.work-advantages {
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	justify-content: center;
+	padding: rem(180) 0;
+	@include media(md, max) {
+		flex-direction: column;
+		align-items: center;
+		padding: rem(50);
+	}
+}
+
+.work-advantage {
+	$this: &;
+	position: relative;
+	height: em(240, 50);
+	width: em(240, 50);
+	border-radius: 50%;
+	border: 2px solid rgba(map-get($colors, primary), .5);
+	@include resp-val(20, 50, 640, 1440);
+	&:before {
+		content: '';
+		display: block;
+		@extend %abs-center;
+		height: em(20, 50);
+		width: em(20, 50);
+		@include max-size(em(20, 50));
+		background-color: opacify(map-get($colors, primary), .5);
+		border-radius: 50%;
+		z-index: 1;
+	}
+	&:after {
+		content: '';
+		display: block;
+		background-color: opacify(map-get($colors, primary), .5);
+		width: 2px;
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: (120em/ 50);
+		height: (190em/ 50);
+		margin: auto;
+		z-index: 3;
+	}
+	& + & {
+		margin-left: em(-40, 50);
+
+	}
+	&__icon {
+		display: block;
+		height: 100%;
+		width: 100%;
+		z-index: 5;
+		border-radius: 50%;
+		position: relative;
+		fill: #fff;
+		opacity: 0;
+		transition: all .3s;
+		svg, img {
+			@extend %abs-center;
+			height: 50%;
+			width: 50%;
+
+		}
+	}
+	&__name {
+		font-weight: 900;
+		@include resp-val(14, 16, 640, 1440);
+		text-transform: uppercase;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: calc(100% + (90em / 16));
+		text-align: center;
+		max-height: 4.5rem;
+		overflow-y: hidden;
+	}
+	&:nth-child(2n) {
+		&:after {
+			bottom: auto;
+			top: (120em /50);
+
+		}
+		#{$this}__name {
+			bottom: auto;
+			top: em(330, 16);
+			@media(max-width: 1350px) {
+				@include resp-val(200, 300, 768, 1280, 'top');
+			}
+		}
+	}
+	&:hover {
+		#{$this}__icon {
+			transform: scale((300/245));
+			background-color: map-get($colors, primary);
+			opacity: 1;
+		}
+	}
+	@include media(md, max) {
+		margin: -10px -10px -10px 0 !important;
+		&:after {
+			height: 2px;
+			width: (190em/ 50);
+			bottom: 0;
+			left: (120em/ 50);
+			top: 0;
+			right: auto;
+		}
+		&__name {
+			right: auto;
+			bottom: 0;
+			top: 0;
+			left: calc(100% + (60em / 16));
+			height: 4.5em;
+			margin: auto;
+			width: 12rem;
+			font-size: 12px;
+		}
+		&:nth-child(2n) {
+			margin: -10px 0 -10px -10px !important;
+			&:after {
+				top: 0;
+				bottom: 0;
+				right: (120em/ 50);
+				left: auto;
+
+			}
+			#{$this}__name {
+				top: 0;
+				bottom: 0;
+				left: auto;
+				right: calc(100% + (60em / 16));
+			}
+		}
+	}
+	@include media(ms, max) {
+		align-self: flex-start;
+		margin: 10px 0 !important;
+		font-size: 15px;
+
+		&:nth-child(2n) {
+			align-self: flex-end;
+		}
+	}
+}

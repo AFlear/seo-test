@@ -1,0 +1,36 @@
+////
+/// @group _settings/
+////
+
+/// Получение `unitless`
+/// @param {number} $number - размер
+/// @return {number}
+@function strip-units ($number) {
+	@if type-of($number) == "number" and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	@return $number;
+}
+
+/// Получение размера в `em` от указанного значения
+/// @param {number} $value - размер в `px`
+/// @param {number} $base [16px] - основное значение, которое берется за единицу
+/// @param {number} $unit [1em] - единица размера
+/// @return {number}
+@function em ($value, $base: 16px, $unit: 1em) {
+	@if not unitless($value) {
+		$value: strip-units($value);
+	}
+	@if not unitless($base) {
+		$base: strip-units($base);
+	}
+	@return ($value / $base) * $unit;
+}
+
+/// Получение размера в `rem` от указанного значения
+/// @param {number} $value - размер в `px`
+/// @param {number} $base [16px] - основное значение, которое берется за единицу
+/// @return {number}
+@function rem ($value, $base: 16px) {
+	@return em($value, $base, 1rem);
+}

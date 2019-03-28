@@ -1,0 +1,95 @@
+.advantages-container {
+	position: relative;
+	&:before {
+		opacity: .25;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		height: 310px;
+		background: #fff url("/Media/assets/images/backgrounds/dot-pattern.png");
+		@include media(lg, max) {
+			display: none;
+		}
+	}
+}
+
+.advantages-list {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+}
+
+.advantage {
+	flex-basis: 230px;
+	padding: 0 10px;
+
+	&__icon {
+		margin: auto;
+		@include resp-val(150, 220, 768, 1280, 'height');
+		@include resp-val(150, 220, 768, 1280, 'width');
+		@include resp-val(20, 50, 768, 1280, 'margin-top');
+		@include resp-val(20, 40, 768, 1280, 'margin-bottom');
+		@include media(md, max) {
+			height: 100px;
+			width: 100px;
+		}
+		box-shadow: 0 3px 79px 0 rgba(2, 3, 3, 0.11);
+		border-radius: 50%;
+		background-color: #fff;
+		position: relative;
+		flex-shrink: 0;
+		svg {
+			@extend %abs-center;
+			@include max-size(50%);
+			fill: $color-brand;
+		}
+	}
+	&__title {
+		font-weight: 900;
+		text-align: center;
+		@include resp-val(14, 18, 768, 1280, 'font-size');
+		@include resp-val(10, 50, 768, 1280, 'padding-top');
+		@include resp-val(10, 30, 768, 1280, 'padding-bottom');
+		text-transform: uppercase;
+		padding-bottom: 30px;
+		@include media(lg, max) {
+			padding-top: 0;
+		}
+	}
+	&__text {
+		text-align: center;
+	}
+	@include media(md, max) {
+		flex-basis: 100%;
+		display: flex;
+		align-items: center;
+		& + & {
+		}
+		margin-top: 20px;
+		&__body {
+			padding-top: 0;
+			flex-grow: 1;
+		}
+		&__icon {
+			margin: -0px;
+			margin-right: rem(20);
+		}
+		&__title {
+			padding-bottom: 0;
+			text-align: left;
+		}
+		&__text {
+			text-align: left;
+		}
+	}
+	@include media(lg, max) {
+		flex-basis: 30%;
+	}
+}

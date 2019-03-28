@@ -1,0 +1,21 @@
+////
+/// @group _settings/
+////
+
+/// Хедперы цветов элементов
+/// @param {Map} $points [()] - карта цветов, для которых нужно сделать хелперы
+@mixin helpers-color ($colors: ()) {
+	$props: (
+		color: color,
+		bgcolor: background-color,
+		fill: fill
+	);
+
+	@each $color, $value in $colors {
+		@each $key, $prop in $props {
+			._#{$key + $sep + $color} {
+				#{$prop}: $value;
+			}
+		}
+	}
+}

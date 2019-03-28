@@ -1,0 +1,64 @@
+.about-us-container {
+	.wysiwyg-left {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		&:before {
+			position: absolute;
+			content: "";
+			top: 0;
+			width: 100%;
+			height: rem(100);
+			background: #fff url("/Media/assets/images/backgrounds/dot-pattern.png");
+			opacity: 0.25;
+			z-index: 5;
+		}
+		&:after {
+			position: absolute;
+			content: "";
+			bottom: 0;
+			width: 100%;
+			height: rem(100);
+			background: #fff url("/Media/assets/images/backgrounds/dot-pattern.png");
+			opacity: 0.25;
+			z-index: 5;
+		}
+	}
+}
+
+.about-us {
+	background-color: #fff;
+	flex-basis: 75%;
+	position: relative;
+	@include resp-val(20, 30, 320, 1440, 'padding-top');
+	@include resp-val(20, 50, 320, 1440, 'padding-left');
+	@include resp-val(20, 50, 320, 1440, 'padding-right');
+	@include resp-val(20, 50, 320, 1440, 'padding-bottom');
+	@media(max-width: 1280px) {
+		flex-basis: 100%;
+		&__img {
+			width: auto;
+			left: 0;
+		}
+	}
+	&__title {
+		@include resp-val(20, 30, 320, 1440, 'font-size');
+		font-weight: 900;
+		color: #333333;
+		position: relative;
+		text-align: left;
+		text-transform: uppercase;
+		padding-bottom: rem(30);
+		z-index: 6;
+	}
+	&__text {
+		padding: 10px 0;
+
+	}
+	&__img {
+		padding: rem(60) 0;
+		position: relative;
+		width: 150%;
+		left: -20%;
+	}
+}

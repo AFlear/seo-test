@@ -1,0 +1,5 @@
+.contacts-map{
+	position: relative;
+	z-index: 9;
+	@include resp-val(300, 920, 768, 1280, 'height');
+}

@@ -1,0 +1,28 @@
+<%
+/** Шаблон главной страницы
+ * @name index.ejs */
+
+/** установка основного лейаута */
+app.setLayout('base.ejs');
+
+/** расширение глобального объекта app
+ * @see module:core */
+app.require('core.js')(app);
+
+// выгружаем инструменты
+const {currentView} = app.data;
+%>
+
+<%- app.widget('sections/main-slider.ejs')%>
+<%- app.widget('sections/write-us.ejs')%>
+<%- app.widget('sections/services.ejs')%>
+<%- app.widget('sections/case-slider.ejs')%>
+<div class="_section-divider"></div>
+<%- app.widget('sections/work-advantages.ejs')%>
+<%- app.widget('sections/write-us.ejs')%>
+<%- app.widget('sections/list-tariffs.ejs')%>
+<%- app.widget('sections/way-to-result.ejs')%>
+<%- app.widget('sections/reviews-block.ejs')%>
+<%- app.widget('sections/partners.ejs')%>
+<%- app.widget('sections/order-form.ejs')%>
+

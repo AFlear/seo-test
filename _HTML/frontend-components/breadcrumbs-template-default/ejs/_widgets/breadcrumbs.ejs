@@ -1,0 +1,51 @@
+<%
+	/**
+	 * Хлебные крошки
+	 * @name breadcrumbsWidget
+	 * @memberOf frontendComponents
+	 */
+	const {
+		viewName = app.viewName, // ключ страницы
+		folder = 'breadcrumbs-template-default/ejs/' // ejs директория виджета
+	} = app.entry;
+
+	// модуль работы с путями
+	const path = app.requireNodeModule('path');
+	// путь к справочнику
+	const filePath = path.join(folder, '_requires/data/breadcrumbs.js');
+	// путь к диретории компонентов проекта
+	const folderPath = app.data.ejsPaths.components;
+
+	/**
+	 * Спровочник хлебных крошек
+	 * @const {Array.<Object>}
+	 * @see frontendComponents.breadcrumbs
+	 * @private
+	 */
+	const breadcrumbs = app.require(filePath, folderPath)(app);
+
+	/**
+	 * Список хлебных крошек для текущей страницы
+	 * @const {Array|undefined}
+	 * @private
+	 */
+	const list = breadcrumbs[viewName];
+
+	// Если хлебных крошек для страницы нету - выходим
+	if (list === undefined) {
+		// noinspection JSAnnotator
+		return '';
+	}
+%>
+
+	<div class="container">
+		<div class="breadcrumbs">
+			<% list.forEach((item, i) => { %>
+				<% if (!item.href || i === list.length - 1) { %>
+					<span><%- item.title %></span>
+				<% } else { %>
+					<span><a href="<%- item.href %>"><%- item.title %></a></span>
+				<% } %>
+			<% }); %>
+		</div>
+	</div>

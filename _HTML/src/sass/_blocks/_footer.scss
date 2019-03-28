@@ -1,0 +1,49 @@
+.footer{
+	&__header{
+		height: rem(70);
+	}
+	&__body{
+		padding: rem(50) 0 rem(70);
+		background-color: #fff;
+	}
+	&__footer{
+		padding: rem(15) 0;
+		background-color: #333;
+		color: #999;
+		font-size: rem(12);
+		letter-spacing: .4px;
+		line-height: 1.4em;
+	}
+	&__logo{
+		display: block;
+		margin: auto;
+		width: 100%;
+		height: auto;
+		max-width: 3rem;
+	}
+}
+
+.footer-column{
+	&__title{
+		font-size: rem(16);
+		font-weight: 900;
+		text-transform: uppercase;
+		margin-bottom: rem(30);
+	}
+	&__list{
+		font-size: rem(14);
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	a{
+		&:hover{
+			text-decoration: underline;
+			color: map-get($colors, primary);
+		}
+		&:active{
+			opacity: .7;
+		}
+	}
+}
+

@@ -1,0 +1,25 @@
+/// Статья - https://habrahabr.ru/post/310186/
+// миксин для плавной адаптации отступов, размеров ширины, высоты, шрифта и т.д.
+@mixin resp-val($val-min, $val-max, $viewport-min, $viewport-max, $prop-name: 'font-size', $units: px, $fallback: true) {
+	// ------- prepare incoming data -------
+	$val-min: strip-units($val-min);
+	$val-max: strip-units($val-max);
+	$viewport-min: strip-units($viewport-min);
+	$viewport-max: strip-units($viewport-max);
+	// ------- END prepare incoming data -------
+
+	// @debug type-of($viewport-min + $units); //=> string
+
+	#{$prop-name}: $val-min + $units;
+
+	@include media($viewport-min * 1px) {
+		@if ($fallback) {
+			#{$prop-name}: (($val-min + $val-max) / 2) + $units;
+		}
+		#{$prop-name}: responsive-size($val-min, $val-max, $viewport-min, $viewport-max, $units);
+	}
+
+	@include media($viewport-max * 1px) {
+		#{$prop-name}: $val-max + $units;
+	}
+}

@@ -1,0 +1,96 @@
+////
+/// @group style.scss
+////
+// сбор всех основных блоков для текущего проекта
+// данный файл только импортирует нужные блоки кода
+// написание чистого кода в этом файле - запрещается
+// -------------------------------------------------
+@import "_settings/all";
+// structure
+@import "_blocks/helpers";
+@import "_blocks/layout";
+@import "_blocks/header";
+@import "_blocks/page-404";
+@import "_blocks/section";
+@import "_blocks/container";
+@import "../assets/fonts/stylesheet";
+@import "_blocks/main-slider";
+@import "_blocks/pagination";
+@import "breadcrumbs-template-default/sass/_blocks/breadcrumbs";
+// form
+@import "_blocks/form";
+
+// button
+@import "_blocks/button";
+// text
+@import "_blocks/title";
+@import "_blocks/horizontal-scroll";
+@import "_blocks/icon-term";
+@import "_blocks/faq";
+@import "_blocks/advantage";
+@import "_blocks/tariff";
+@import "_blocks/ordering";
+@import "_blocks/wip";
+@import "_blocks/partners";
+@import "_blocks/helpful";
+@import "_blocks/work-advantage";
+@import "_blocks/services";
+//faq
+@import "_blocks/faq";
+//blog
+@import "_blocks/blog-card";
+@import "_blocks/new";
+@import "_blocks/article";
+//services
+@import "_blocks/wysiwyg-services";
+//services > subpage > order-service
+@import "_blocks/title-order-service";
+@import "_blocks/stage-slider";
+@import "_blocks/price-order";
+//reviews
+@import "_blocks/reviews-slider";
+@import "_blocks/video-reviews";
+@import "_blocks/text-reviews";
+@import "_blocks/case-slider";
+
+//about
+@import "_blocks/our-info";
+@import "_blocks/about-us";
+@import "_blocks/principles";
+//contact
+@import "_blocks/contact";
+@import "_blocks/contact-map";
+//footer
+@import "_blocks/footer";
+@import "_blocks/socials";
+@import "_blocks/mobile-menu";
+// ui
+@import "_blocks/demo";
+@import "_blocks/ratio";
+@import "_blocks/preloader";
+@import "_blocks/sitemap";
+
+.dropdown {
+	position: relative;
+	cursor: pointer;
+}
+
+.dropdown__content {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background: #ff0;
+	min-height: 50px;
+}
+
+iframe.mfp-iframe{
+	margin: 35px 0 0 5px;
+}
+
+.mfp-iframe-holder {
+	.mfp-close {
+		text-align: center;
+		padding-right: 0;
+		width: 7.5%;
+	}
+}

@@ -1,0 +1,114 @@
+.stage-slider {
+
+	box-shadow: 0 3px 121.66px 36.34px rgba(2, 3, 3, 0.11);
+
+	@include resp-val(15, 60, 320, 1280, 'margin-top');
+	&-container {
+		padding-top: 680/1480*100%;
+		position: relative;
+		max-width: 1480px;
+		margin: auto;
+		z-index: 5;
+		@include media(md, max) {
+			display: none;
+		}
+	}
+	& {
+		@extend %abs-center;
+	}
+	&__slide {
+		padding-top: 900/1540*100%;
+		background-size: contain;
+		background-color: #fff;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+
+	&__slide-content {
+		display: flex;
+		position: absolute;
+		flex-direction: column;
+		width: 40%;
+		bottom: 0;
+		top: 0;
+		right: 0;
+		justify-content: flex-start;
+		@include resp-val(15, 50, 320, 1920, 'padding-top');
+		@include resp-val(15, 50, 320, 1920, 'padding-bottom');
+		@include resp-val(10, 20, 320, 1920, 'padding-left');
+
+	}
+
+	&__dots {
+		position: absolute;
+		bottom: -45%;
+		left: 0;
+		right: 0;
+		margin: auto;
+		@media only screen and (max-width: 1439px) {
+			left: 0;
+			bottom: -48%;
+		}
+	}
+	.stage-info {
+		@include resp-val(15, 40, 320, 1280, 'padding-right');
+
+	}
+}
+
+.stage-info__item {
+	display: flex;
+	font-size: rem(16);
+	padding: 1.5rem;
+	-webkit-flex-direction: row;
+	&__body {
+	}
+	&__number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		color: #fff;
+		background-color: #ffb900;
+		border-radius: 50%;
+		margin-right: 1.2rem;
+		@include resp-val(40, 70, 768, 1920, 'width');
+		@include resp-val(40, 70, 768, 1920, 'height');
+		position: relative;
+		top: -20px;
+		@media only screen and (max-width: 1300px) {
+			top: 0;
+		}
+		span {
+			@include resp-val(14, 40, 768, 1920);
+			font-weight: 900;
+			text-align: center;
+			color: #fff;
+			//position: absolute;
+			//top:0;
+			//bottom:0;
+			//left:0;
+			//right:0;
+			//margin: auto;
+		}
+	}
+	&__title {
+		text-transform: uppercase;
+		font-weight: 700;
+		padding-bottom: 15px;
+		@include media(1025px, max) {
+			padding-bottom: 5px;
+		}
+	}
+	&__text {
+		max-height: 80px;
+		overflow-y: hidden;
+		color: #9aaac3;
+		@include media(1025px, max) {
+			max-height: 45px;
+			line-height: 15px;
+		}
+	}
+
+}
+

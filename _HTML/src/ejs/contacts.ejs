@@ -1,0 +1,24 @@
+<%
+/** Шаблон страницы "Контакты"
+ * @name contacts.ejs */
+
+/** установка основного лейаута */
+app.setLayout('base.ejs');
+
+/** расширение глобального объекта app
+ * @see module:core */
+app.require('core.js')(app);
+
+// выгружаем инструменты
+const {currentView} = app.data;
+let title = "Контакты";
+let image = 'assets/images/breadcrumbs/contacts.jpg';
+%>
+
+
+
+<%- app.widget('sections/breadcrumbs.ejs', {title, image}) %>
+<%- app.widget('sections/write-us.ejs')%>
+<%- app.widget('sections/contacts-block.ejs')%>
+<%- app.widget('sections/contacts-map.ejs')%>
+<%- app.widget('sections/order-form.ejs')%>

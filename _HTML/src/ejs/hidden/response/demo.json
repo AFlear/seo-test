@@ -1,0 +1,8 @@
+{
+	"success": true,
+	"reset": false,
+	"clear": false,
+	"reload": false,
+	"redirect": false,
+	"message": "Тестовое сообщение из ответа"
+}

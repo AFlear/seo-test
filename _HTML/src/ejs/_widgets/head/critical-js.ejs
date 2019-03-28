@@ -1,0 +1,46 @@
+<%
+	/** Подключение критикал скриптов
+	 * @name head/critical-js.ejs */
+
+	// выгружаем инструменты
+	const {pkg, svg, currentView} = app.data;
+	const {media, insert, comment} = app.module;
+	const {base64fonts} = app.entry;
+
+	let svg4everybodyOptions = svg.hasGradients ? '{polyfill:true}' : '';
+	let svgCode = [
+		insert('assets/js/static/critical/svg4everybody.js'),
+		`;(function(){document.addEventListener("DOMContentLoaded",function(){svg4everybody(${svg4everybodyOptions})})})();`
+	].join('\n');
+
+	// основные критикал скрипты
+	let content = [
+		comment.todoPhp('Общие критикал скрипты для всех страниц'),
+		`<script>${svgCode}</script>`,
+		`<script>${insert('assets/js/critical/localstorage-test.js')}</script>`
+	];
+
+	// добавляем шрифты
+	if (base64fonts) {
+		let fonts = {
+			name: pkg.name.replace(/\s/, '-').toUpperCase(),
+			woff: media('assets/css/static/fonts/b64-woff.css'),
+			woff2: media('assets/css/static/fonts/b64-woff2.css')
+		};
+
+		let fontsCode =  [
+			insert('assets/js/critical/localstorage-fonts.js'),
+			`;(function(window){window.loadFontsToLocalStorage('Fonts-${fonts.name}','${fonts.woff}','${fonts.woff2}');})(window);`
+		].join('\n');
+
+		content.push(`<script>${fontsCode}</script>`);
+	}
+
+	// добавляем критикал файлы только для текущай страницы
+	if (currentView.criticalJS.length) {
+		let js = currentView.criticalJS.map(item => insert(item));
+		content.push('', comment.todoPhp('Критикал скрипты только для текущей страницы'));
+		content.push(`<script>${js.join('\n')}</script>`);
+	}
+-%>
+<%- content.join('\n') %>

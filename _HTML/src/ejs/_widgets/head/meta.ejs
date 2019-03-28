@@ -1,0 +1,35 @@
+<%
+	/** Основные элементы head
+	 * @name head/meta.ejs */
+
+	// выгружаем инструменты
+	const {pkg, currentView, lang, ejsPaths} = app.data;
+	const {comment, __} = app.module;
+	const {responsive = true} = app.entry;
+-%>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title><%- currentView.headTitle %></title>
+<meta name="description" lang="<%- lang %>" content="description">
+<meta name="keywords" lang="<%- lang %>" content="keywords">
+
+<%- comment.php('Open Graph') %>
+<meta property="og:title" content="<%- currentView.headTitle %>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="<%- pkg.name %>">
+<meta property="og:url" content="http://<%- `${ejsPaths.localFolder}/${app.viewName}` %>">
+<meta property="og:description" content="<%- __('Краткий текст (новости, товара и т.д)') %>">
+
+<%- comment.php('Touch') %>
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+
+<%- comment.php('Viewport') %>
+<% if (responsive) { -%>
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<% } else { -%>
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.33, maximum-scale=1.2">
+<% } -%>

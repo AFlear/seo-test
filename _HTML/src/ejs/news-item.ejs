@@ -1,0 +1,26 @@
+<%
+/** Шаблон новостной страницы
+ * @name news-item.ejs */
+
+/** установка основного лейаута */
+app.setLayout('base.ejs');
+
+/** расширение глобального объекта app
+ * @see module:core */
+app.require('core.js')(app);
+
+let title = "В FACEBOOK СТАЛА ДОСТУПНА ДИНАМИЧЕСКАЯ РЕКЛАМА ДЛЯ СФЕРЫ ТУРИЗМА";
+let image = 'assets/images/breadcrumbs/news_items.jpg';
+
+// выгружаем инструменты
+
+const {currentView} = app.data;
+%>
+
+<%- app.widget('sections/breadcrumbs.ejs', {title, image}) %>
+<%- app.widget('sections/write-us.ejs')%>
+<%- app.widget('blog/new.ejs')%>
+<%- app.widget('sections/order-form.ejs')%>
+
+
+

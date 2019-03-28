@@ -1,0 +1,35 @@
+<%
+/** @namespace app
+ * @see module:core
+ * @see module:docs */
+
+/** Основной лейаут страниц
+ * @name base.ejs */
+-%>
+<%- app.widget('head/php.ejs') %>
+<!doctype html>
+<html lang="<%- app.data.lang %>">
+<head>
+	<%- app.widget('head/meta.ejs') %>
+	<%- app.widget('head/favicons.ejs') %>
+	<%- app.widget('head/critical-css.ejs') %>
+	<%- app.widget('head/critical-js.ejs', {base64fonts: true}) %>
+</head>
+<body>
+<div class="layout">
+	<header class="layout__header">
+		<%- app.widget('header.ejs') %>
+	</header>
+	<div class="layout__body">
+		<%- app.body %>
+	</div>
+	<footer class="layout__footer">
+		<%- app.widget('footer.ejs'); %>
+
+	</footer>
+</div>
+
+<%- app.widget('css-js.ejs') %>
+<%- app.widget('noscript.ejs') %>
+</body>
+</html>

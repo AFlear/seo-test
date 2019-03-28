@@ -1,0 +1,50 @@
+<%
+let principles = [
+	{
+		icon: '/Media/assets/images/icons/efficiency.svg',
+		title: 'Качество',
+		text: 'Любая работа должна быть сделана качественно'
+	},
+	{
+		icon: '/Media/assets/images/icons/quality.svg',
+		title: 'Эффективность',
+		text: 'Решение задачи должно быть эффективным и оптимальным для клиента'
+	},
+	{
+		icon: '/Media/assets/images/icons/punctuality.svg',
+		title: 'Пунктуальность',
+		text: 'Клиент должен получить результат точно в срок'
+	}
+]
+%>
+
+<div class="principles-container">
+	<div class="container">
+		<div class="grid _justify-center">
+			<div class="gcell gcell--12 gcell--md-10">
+				<div class="principles-list">
+					<div class="grid grid--1 grid--md-3 grid--md-hspace-xl grid--vspace-def">
+						<% principles.forEach(principle=>{ %>
+						<div class="gcell ">
+							<div class="principle">
+								<div class="principle__icon">
+									<img src="<%= principle.icon %>" alt="">
+								</div>
+
+								<div class="principle__title">
+									<a href="<%= principle.href || '#' %>">
+										<%= principle.title %>
+									</a>
+								</div>
+								<div class="principle__text">
+									<%= principle.text %>
+								</div>
+							</div>
+						</div>
+						<% }) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

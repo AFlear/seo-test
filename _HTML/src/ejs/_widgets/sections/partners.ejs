@@ -1,0 +1,31 @@
+<%
+let partners = new Array(4).fill({
+	icon: '/Media/assets/images/partners.jpg'
+})
+%>
+
+<div class="_bg-dotted">
+	<div class="container _bgcolor-white">
+
+		<div class="section">
+			<div class="section__title">Наши партнеры</div>
+			<div class="section__subtitle">Описание
+				<br>описание преимущества
+			</div>
+			<div class="partners-list">
+				<div class="grid grid--2 grid--sm-3 grid--md-4 grid--hspace-lg  _justify-around">
+					<% partners.forEach(partner=>{ %>
+					<div class="gcell">
+						<a href="#" class="partner">
+							<div class="partner__inner">
+								<img class="partner__logo-image" src="<%= partner.icon %>" alt="">
+							</div>
+						</a>
+					</div>
+					<% }) %>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

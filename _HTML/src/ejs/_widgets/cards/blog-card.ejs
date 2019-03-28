@@ -1,0 +1,14 @@
+<%
+let {blogCard={}} = app.entry
+%>
+
+<% blogCard.forEach(card=>{ %>
+	<a href="<%- card.href %> " class="blog-card">
+		<img class="blog-card__img" src="<%- card.photo %>">
+		<div class="blog-card__content tshadow">
+			<div class="blog-card__date"><%- card.date %></div>
+			<div class="blog-card__title"><%- card.title %></div>
+			<div class="blog-card__subtitle"><%- card.subtitle %></div>
+		</div>
+	</a>
+<%})%>

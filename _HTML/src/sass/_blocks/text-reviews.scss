@@ -1,0 +1,123 @@
+////
+/// @group _blocks/
+////
+
+/// text-reviews
+
+.text-review {
+	$this: &;
+
+	$tshadow: 0 3px 15px 2px rgba(2, 3, 3, 0.11);
+	display: block;
+	cursor: pointer;
+
+	@include resp-val(14, 28, 320, 1280, 'padding-top');
+
+	&:hover {
+		@include media(def, max) {
+			#{$this}__more {
+				display: none;
+			}
+		}
+
+		#{$this}__more {
+			display: block;
+			color: $color-brand;
+			position: absolute;
+			//border-bottom: 1px dashed $color-brand;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 33px 0;
+			background-image: linear-gradient(to top, #fff, rgba(255, 255, 255, 0.75));
+			transition: 0.2s ease-in-out;
+			span {
+				border-bottom: 1px dashed $color-brand;
+			}
+
+		}
+		//#{$this}__comment{
+		//background-image: linear-gradient(to bottom, #fff, #fff, );
+		//}
+	}
+
+	&__more {
+		display: none;
+		transition: 0.2s ease-in-out;
+	}
+
+	&__content {
+		position: relative;
+		text-align: center;
+		background-color: #fff;
+		box-shadow: $tshadow;
+		@include resp-val(25, 70, 320, 1280, 'padding-bottom');
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 46%;
+			border-color: transparent;
+			border-style: solid;
+			border-width: 15px 15px 0 15px;
+			border-top: 10px solid #fff;
+
+		}
+	}
+	&__icon {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
+		@include resp-val(-14, -28, 320, 1280, 'top');
+		@include resp-val(35, 70, 320, 1280, 'width');
+		@include resp-val(28, 56, 320, 1280, 'height');
+		fill: map-get($colors, primary)
+	}
+
+	&__comment {
+		@include resp-val(25, 65, 320, 1280, 'padding-top');
+		@include resp-val(25, 60, 320, 1280, 'padding-left');
+		@include resp-val(25, 60, 320, 1280, 'padding-right');
+		line-height: 22px;
+		overflow-y: hidden;
+		height: 15rem;
+		@include media(def, max) {
+			height: 14rem;
+		}
+		@include media(md, max) {
+			height: 13rem;
+		}
+
+	}
+
+	&__meta {
+		display: block;
+		@include resp-val(15, 30, 320, 1280, 'padding-top');
+		@include resp-val(23, 30, 320, 1280, 'padding-bottom');
+		text-align: center;
+		line-height: 17px;
+		//@include resp-val(15, 30, 320, 1280, 'padding-left');
+		//@include resp-val(18, 60, 320, 1280, 'padding-right');
+
+	}
+
+	&__title {
+		color: #333333;
+		text-transform: uppercase;
+		font-weight: 900;
+	}
+	&__popup {
+		background-color: #fff;
+		margin: auto;
+		margin-top: rem(60);
+		max-width: rem(700px);
+		padding: rem(75) rem(50);
+		position: relative;
+
+		&-text {
+			max-height: 20rem;
+			overflow-y: auto;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+<%
+	/**
+	 * @name sitemap-list.ejs */
+
+	// выгружаем инструменты
+	const {__} = app.module;
+	const {list = app.data.sitemap} = app.entry;
+-%>
+<% function sitemapList (items) { -%>
+	<ul>
+		<% items.forEach(item => { -%>
+		<li>
+			<a href="<%- item.href %>"><%- __(item.title) %></a>
+			<% if (Array.isArray(item.children)) { -%>
+				<%- sitemapList(item.children) %>
+			<% } %>
+		</li>
+		<% }); %>
+	</ul>
+<% } -%>
+<div class="sitemap">
+	<%- sitemapList(list) %>
+</div>

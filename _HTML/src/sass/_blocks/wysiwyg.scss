@@ -1,0 +1,233 @@
+////
+/// @group _blocks/
+////
+
+/// Описание
+.wysiwyg {
+	$gap: map-get($gutters, def);
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: map-get($gutters, lg) 0;
+		line-height: 1.2;
+	}
+
+	h1 {
+		font-weight: 600;
+		font-size: 2.3rem;
+	}
+
+	h2 {
+		font-weight: 600;
+		font-size: 1.8rem;
+	}
+
+	h3 {
+		font-weight: 600;
+		font-size: 1.4rem;
+	}
+
+	h4 {
+		font-size: 1.2rem;
+	}
+
+	h5 {
+		font-size: 1rem;
+	}
+
+	h6 {
+		font-size: 1rem;
+		color: #777;
+	}
+
+	p,
+	ul,
+	ol,
+	dl,
+	pre,
+	table:not(.horizontal-scroll__element),
+	blockquote,
+	address,
+	.ratio-wrapper,
+	.horizontal-scroll {
+		margin: $gap 0;
+		padding: 0.25rem;
+	}
+
+	ul{
+		list-style-type: none !important;
+
+	}
+
+	table {
+		border: 1px solid map-get($colors, gray);
+		border-collapse: collapse;
+		width: 100%;
+		vertical-align: top;
+
+		p,
+		ul,
+		ol,
+		dl,
+		pre,
+		table,
+		blockquote,
+		address {
+			margin: 0;
+		}
+	}
+
+	thead,
+	tfoot,
+	tbody,
+	tr,
+	th,
+	td {
+		border: inherit;
+		vertical-align: inherit;
+	}
+
+	th,
+	td {
+		padding: rem(2px);
+
+		&.is-active {
+			background-color: #ff0;
+		}
+	}
+
+	hr {
+		margin: $gap * 2 0;
+	}
+
+	figure {
+		margin-left: 0;
+		margin-right: 0;
+		padding: 1rem;
+		text-align: center;
+		border: 1px solid map-get($colors, bg);
+		box-sizing: border-box;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	figcaption {
+		padding-top: .5rem;
+		font-style: italic;
+	}
+
+	blockquote {
+		padding: 0 $gap;
+		border: 1px solid transparent;
+		border-radius: 4px;
+		background-color: map-get($colors, bg);
+	}
+
+	pre {
+		border-radius: .3em;
+		text-shadow: 0 1px map-get($colors, white);
+		font-family: map-get($font-family, monospace);
+		background-color: #fdf6e3;
+		tab-size: 4;
+	}
+
+	:not(pre) > code,
+	kbd,
+	samp {
+		border-radius: .3em;
+		text-shadow: 0 1px map-get($colors, white);
+		font-family: map-get($font-family, monospace);
+		padding: .1em 6px;
+		white-space: normal;
+		hyphens: none;
+		tab-size: 4;
+		word-spacing: normal;
+		word-break: normal;
+		word-wrap: normal;
+		text-align: left;
+	}
+
+	:not(pre) > code {
+		background-color: #fdf6e3;
+	}
+
+	kbd {
+		background-color: #e5e5fb;
+	}
+
+	samp {
+		background-color: #fde6e3;
+	}
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd + dt {
+		margin-top: $gap / 2;
+	}
+
+	a {
+		color: map-get($colors, link);
+		text-decoration: none;
+
+		&[href^="http://"],
+		&[href^="https://"] {
+			background: url(./static/pic/external-link-hover.svg) top left / 0 no-repeat, url(./static/pic/external-link-active.svg) top left / 0 no-repeat;
+
+			&::after {
+				content: "";
+				width: 1em;
+				height: 1em;
+				margin-left: 1px;
+				display: inline-block;
+				vertical-align: middle;
+				background: url(./static/pic/external-link.svg) no-repeat;
+				background-size: contain;
+			}
+
+			&:hover {
+				&::after {
+					background-image: url(./static/pic/external-link-hover.svg);
+				}
+			}
+
+			&:active {
+				&::after {
+					background-image: url(./static/pic/external-link-active.svg);
+				}
+			}
+		}
+
+		&[href^="mailto:"] {
+			&::before {
+				content: "\2709\00a0";
+			}
+		}
+
+		&[href^="tel:"] {
+			&::before {
+				content: "\2706\00a0";
+			}
+		}
+
+		&:hover {
+			text-decoration: underline;
+			color: map-get($colors, link-hover);
+		}
+
+		&:active {
+			color: map-get($colors, link-active);
+		}
+	}
+	.horizontal-scroll::after{
+		box-shadow: none;
+	}
+
+}

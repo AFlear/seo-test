@@ -1,0 +1,171 @@
+.case-slider{
+	&-container{
+		padding-top: 39.333%;
+		position: relative;
+		max-width: 1540px;
+		margin: auto;
+	}
+	&{
+		@extend %abs-center;
+	}
+	&__slide{
+		padding-top: 39.333%;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+	&-fixed{
+		@extend %abs-center;
+		bottom: auto;
+		@include media(ms, max) {
+			.section__subtitle {
+				display: none;
+			}
+		}
+	}
+	&__slide-content{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		height: auto;
+		background-color: rgba(#000, .65);
+		padding-top: 4em;
+		padding-bottom: 1rem;
+		@include resp-val(25, 80, 320, 1920, 'padding-left');
+		@include resp-val(25, 80, 320, 1920, 'padding-right');
+		@media (max-width: 599px){
+			height: 100%;
+			padding-top: 15%;
+		}
+	}
+	&__arrow{
+		@include resp-val(1.75, 10, 320, 1280);
+		height: 9em;
+		width: 9em;
+		background-color: transparent;
+		position: absolute;
+		top: 40%;
+		fill: none;
+		stroke: #b8bac2;
+		stroke-width: 3px;
+		border: none;
+		cursor: pointer;
+			svg{
+				@extend %abs-center;
+				@include max-size(50%)
+			}
+			@media(max-width: 1370px){
+				&--left {
+					left: 10px;
+				}
+				&--right {
+					right: 10px;
+				}
+			}
+		&--left{
+			left: -4.5em;
+			svg{
+			}
+		}
+		&--right{
+			right: -4.5em;
+		}
+	}
+}
+
+.case-info{
+	color: #fff;
+	@include resp-val(5, 10, 320, 1280);
+	&__company-name{
+		font-size: 3em;
+		text-transform: uppercase;
+		font-weight: 900;
+		max-height: 5.5rem;
+		overflow: hidden;
+		@include media(sm, max){
+			max-height: 2.5rem;
+			overflow: hidden;
+		}
+	}
+	&__company-site{
+		font-size: 3em;
+		color: map-get($colors, primary);
+		text-decoration: underline;
+	}
+}
+
+.case-info-rates{
+	&__title{
+		font-size: 2em;
+		font-weight: 900;
+		padding: 1em -0px 1em;
+		text-transform: uppercase;
+		border-bottom: 1px solid rgba(#fff, .15);
+	}
+	&__body{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+}
+
+.company-info-rate{
+	padding: em(15) 0;
+	flex-basis: 30%;
+	position: relative;
+	&:last-child{
+		&::after{
+			height: 0;
+			width: 0;
+
+		}
+	}
+	&::after{
+		background: rgba(255, 255, 255, 0.15);
+		height: 75%;
+		width: 1px;
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 3rem;
+		margin: auto;
+	}
+	@include media(def, max){
+		font-size: 35%;
+	}
+	&__value{
+		font-size: 5em;
+		font-weight: 900;
+		font-family: Arial;
+		color: $color-brand;
+	}
+	&__text{
+		@include resp-val(8, 16, 320, 1280);
+	}
+}
+
+.case-bg-bottom{
+	position: relative;
+	@media(max-width: 1650px){
+		@include resp-val(20, 110, 320, 1280, 'margin-top');
+	}
+	img{
+		position: absolute;
+		@include resp-val(-3, -355, 320, 1920, 'top');
+		right: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		@include media(lg, min){
+			max-width: 110%;
+			left: -5%;
+		}
+	}
+	@include media(md, max){
+		margin-bottom: 30px;
+	}
+}

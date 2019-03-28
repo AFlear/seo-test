@@ -1,0 +1,51 @@
+<%
+let contactsList = [
+		{
+			icon: '/Media/assets/images/icons/location.svg',
+			title: 'Адрес',
+			subtitle: 'г.Киев, бул.Шевченко, 28'
+		},
+		{
+			icon: '/Media/assets/images/icons/phone.svg',
+			title: '24/7 По всем вопросам',
+			subtitle: '+38 099 123-45-67   +38 067 123-45-67'
+		},
+		{
+			icon: '/Media/assets/images/icons/skype.svg',
+			title: 'Skype',
+			subtitle: 'seoevolution'
+		},
+		{
+			icon: '/Media/assets/images/icons/viber.svg',
+			title: 'Viber, whatsapp',
+			subtitle: '+38 099 123-45-67'
+		},
+		{
+			icon: '/Media/assets/images/icons/mail.svg',
+			title: 'Наша почта',
+			subtitle: 'office@seoevolution.ru '
+		}
+	]
+%>
+
+
+<div class="section">
+	<div class="_section-bg-dot">
+		<div class="contacts-container">
+			<div class="container">
+				<div class="contacts-list">
+					<% contactsList.forEach(contact=>{ %>
+					<div class="contact">
+						<div class="contact__icon"><img src="<%= contact.icon %>" alt=""></div>
+						<div class="contact__body">
+							<div class="contact__title"><%= contact.title %></div>
+							<div class="contact__subtitle"><%= contact.subtitle %></div>
+						</div>
+					</div>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

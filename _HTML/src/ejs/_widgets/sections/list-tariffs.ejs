@@ -1,0 +1,40 @@
+<%
+let tariffs = [
+	{
+		title: 'Разработка сайтов',
+		price: '6 930',
+		text: 'Lorem ipsum dolor sit amet, sapiLorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus acru, urna praesent at id quisque ac. Acru es massa vestibulum'
+	},
+	{
+
+		title: 'Сео продвижение',
+		price: '6 930',
+		text: 'Lorem ipsum dolor sit amet, sapiLorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus acru, urna praesent at id quisque ac. Acru es massa vestibulum'
+	},
+	{
+		title: 'Контекстная реклама',
+		price: '6 930',
+		text: 'Lorem ipsum dolor sit amet, sapiLorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus acru, urna praesent at id quisque ac. Acru es massa vestibulum'
+	},
+	{
+		title: 'СММ',
+		price: '6 930',
+		text: 'Lorem ipsum dolor sit amet, sapiLorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus acru, urna praesent at id quisque ac. Acru es massa vestibulum'
+	}
+]
+
+
+%>
+<div class="section">
+	<div class="container">
+		<div class="section__title">Наши тарифы</div>
+		<div class="section__subtitle">Описание преимущества описание преимущества описание преимущества описание
+			<br> преимущества описание преимущества описание преимущества описание преимущества
+			<br>описание преимущества
+		</div>
+	</div>
+	<div class="container">
+		<%- app.widget('sections/our-tariffs.ejs',{tariffs})%>
+	</div>
+
+</div>

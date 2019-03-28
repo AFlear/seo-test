@@ -1,0 +1,16 @@
+/// Статья - https://habrahabr.ru/post/310186/
+@function responsive-size($val-min, $val-max, $viewport-min, $viewport-max, $units: px) {
+	// ------- prepare incoming data -------
+	$val-min: strip-units($val-min);
+	$val-max: strip-units($val-max);
+	$viewport-min: strip-units($viewport-min);
+	$viewport-max: strip-units($viewport-max);
+	// ------- END prepare incoming data -------
+
+	$k: ($val-max - $val-min)/($viewport-max - $viewport-min);
+	$b: $val-min - $k * $viewport-min;
+
+	$b: $b + $units;
+
+	@return calc(#{$k} * 100vw + #{$b});
+}

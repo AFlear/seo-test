@@ -1,0 +1,61 @@
+<%
+/** Шаблон главной страницы
+ * @name video-reviews.ejs */
+
+/** установка основного лейаута */
+app.setLayout('base.ejs');
+
+/** расширение глобального объекта app
+ * @see module:core */
+app.require('core.js')(app);
+
+// выгружаем инструменты
+const videoReviews = new Array(9).fill(1)
+
+let title = "Отзывы";
+let image = 'assets/images/breadcrumbs/reviews.jpg';
+%>
+
+
+
+<%- app.widget('sections/breadcrumbs.ejs', {title, image}) %>
+<%- app.widget('sections/write-us.ejs') %>
+
+
+<div class="section">
+	<div class="_section-bg-dot-sm">
+		<div class="container">
+			<div class="grid _justify-between">
+				<div class="gcell gcell--sm-6 gcell--def-4 gcell--12 _btn-reviews-block">
+					<a href="video-reviews" class="button button--none-border">видеоотзывы</a>
+
+					<a href="text-reviews" class="button button--none-border">текстовые отзывы</a>
+				</div>
+				<div class="gcell gcell--sm-4 gcell--def-3 gcell--12 _def-justify-end _btn-reviews-block">
+					<button class="button button--primary _btn-size-sm _color-white js-mfp-ajax " data-mfp-src="hidden/message.php">
+						оставить отзыв
+					</button>
+				</div>
+			</div>
+		</div>
+			<div class="video-reviews">
+				<div class="container _ptb-lg">
+					<div class="video__list grid grid--1 grid--sm-2 grid--md-3 grid--space-def">
+						<% videoReviews.forEach((review, i) => { %>
+						<div class="gcell">
+							<%- app.widget('cards/video-review.ejs',{review})%>
+						</div>
+						<% if(!((i + 1) % 3)){ %>
+						<div class=" _grid-divider-sm _def-show"></div>
+						<% } %>
+						<% }); %>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<%- app.widget('sections/pagination.ejs') %>
+</div>
+
+<%- app.widget('sections/order-form.ejs') %>
+

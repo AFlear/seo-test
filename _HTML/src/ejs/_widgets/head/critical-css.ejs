@@ -1,0 +1,22 @@
+<%
+	/** Подключение критикал стилей
+	 * @name head/critical-css.ejs */
+
+	// выгружаем инструменты
+	const {insert, comment} = app.module;
+	const {currentView} = app.data;
+
+	// основные критикал стили
+	const content = [
+		comment.todoPhp('Общие критикал стили для всех страниц'),
+		`<style>${insert('assets/css/critical/common.css')}</style>`
+	];
+
+	// добавляем критикал файлы только для текущай страницы
+	if (currentView.criticalCSS.length) {
+		let css = currentView.criticalCSS.map(item => insert(item));
+		content.push('', comment.todoPhp('Критикал стили только для текущей страницы'));
+		content.push(`<style>${css.join('\n')}</style>`);
+	}
+-%>
+<%- content.join('\n') %>

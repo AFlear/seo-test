@@ -1,0 +1,17 @@
+////
+/// @group _settings/
+////
+
+/// Карта брейкпоинтов для переборов в циклах
+/// @type Map
+$gutters: (
+	none: 0,
+	sm: rem(5px),
+	ms: rem(10px),
+	md: rem(15px),
+	def: rem(20px),
+	lg: rem(30px),
+	xl: rem(40px),
+	mg: rem(60px),
+	dt: rem(80px)
+);

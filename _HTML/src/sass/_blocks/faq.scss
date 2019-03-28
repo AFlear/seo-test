@@ -1,0 +1,112 @@
+////
+/// @group _blocks/
+////
+
+/// faq
+
+.faq {
+
+	padding: map-get($gutters, def);
+	margin-bottom: map-get($gutters, def);
+
+	.panel {
+		$this: &;
+
+		display: block;
+		box-shadow: 0 3px 79px 0 rgba(2, 3, 3, 0.11);
+		@include resp-val(12, 18, 320, 1280);
+		font-weight: 400;
+		line-height: 1.35;
+
+		&__heading {
+			position: relative;
+			@include resp-val(12, 30, 320, 1280, 'padding-top');
+			@include resp-val(9, 30, 320, 1280, 'padding-bottom');
+			@include resp-val(15, 30, 320, 1280, 'padding-left');
+			@include resp-val(45, 100, 320, 1280, 'padding-right');
+			color: #333333;
+			text-transform: uppercase;
+			font-weight: 900;
+			cursor: pointer;
+		}
+
+		&__body {
+			position: relative;
+			@include resp-val(15, 30, 320, 1280, 'padding-top');
+			@include resp-val(23, 46, 320, 1280, 'padding-bottom');
+			@include resp-val(15, 30, 320, 1280, 'padding-left');
+			@include resp-val(18, 60, 320, 1280, 'padding-right');
+			color: #9aaac3;
+			font-size: rem(16);
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				@include resp-val(15, 30, 320, 1280, 'left');
+				@include resp-val(18, 37, 320, 1280, 'right');
+				z-index: 1;
+				display: block;
+				border-bottom: 1px solid #e2e2ec;
+			}
+		}
+
+		&--accordion {
+			.faq-item {
+				position: relative;
+				&__svg {
+					position: absolute;
+					top: 25%;
+					right: 2%;
+					svg {
+						@include resp-val(25, 50, 320, 1280, 'width');
+						@include resp-val(25, 50, 320, 1280, 'height');
+						@include resp-val(25, 50, 320, 1280, 'height');
+					}
+					&.minus {
+						display: none;
+					}
+					@media (max-width: 767px) {
+						top: 40%;
+					}
+					@media (max-width: 620px) {
+						top: 15%;
+					}
+				}
+				@include media(def, min) {
+					&__question {
+						&:hover {
+							color: $color-brand;
+						}
+					}
+				}
+				&__answer {
+					display: block;
+					margin: 0;
+					padding: 0;
+					color: inherit;
+					font-family: inherit;
+					font-size: inherit;
+					font-weight: inherit;
+					line-height: inherit;
+				}
+			}
+
+			&.is-open {
+				border: 2px solid $color-brand;
+
+				.faq-item {
+					&__question:hover {
+						color: #333333;
+					}
+				}
+				.plus {
+					display: none;
+				}
+				.minus {
+					display: block;
+				}
+			}
+		}
+	}
+}

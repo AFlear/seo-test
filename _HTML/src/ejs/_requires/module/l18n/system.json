@@ -1,0 +1,38 @@
+{
+	"Закрыть": {
+		"ru": "Закрыть",
+		"uk": "Закрити",
+		"en": "Close",
+		"pl": "Zamknij"
+	},
+	"Отключен JavaScript строка 1": {
+		"ru": "В Вашем браузере <b>отключен JavaScript!</b> Для корректной работы с сайтом необходима поддержка Javascript.",
+		"uk": "У Вашому браузері <b>відключений JavaScript!</b> Для коректної роботи з сайтом необхідна підтримка Javascript!",
+		"en": "<b>JavaScript is disabled</b> in your browser! For correct work with the site you need Javascript support!",
+		"pl": "<b>JavaScript jest wyłączony w Twojej przeglądarce!</b> Do poprawnej pracy z witryną potrzebujesz wsparcia Javascript!"
+	},
+	"Отключен JavaScript строка 2": {
+		"ru": "Мы рекомендуем Вам включить использование JavaScript в настройках вашего браузера.",
+		"uk": "Ми рекомендуємо Вам включити використання JavaScript в налаштуваннях вашого браузера.",
+		"en": "We recommend that you enable JavaScript in your browser settings.",
+		"pl": "Zalecamy włączenie obsługi JavaScript w ustawieniach przeglądarki."
+	},
+	"Разработка сайта": {
+		"ru": "Разработка",
+		"uk": "Розробка сайту",
+		"en": "Website development",
+		"pl": "Tworzenie strony internetowej"
+	},
+	"404. К сожалению, страница, которую Вы запросили, не была найдена": {
+		"ru": "<em>К сожалению, страница, которую Вы запросили, не была найдена.</em> <br> Вы можете перейти на <a href=\":main\">Главную страницу</a>, чтобы найти нужную Вам информацию",
+		"uk": "<em>На жаль, сторінка, яку ви запросили, не була знайдена.</em> <br> Ви можете перейти на <a href=\":main\">Головну сторінку</a>, щоб знайти необхідну Вам інформацію",
+		"en": "<em>Unfortunately, the page you requested was not found.</em> <br> You can go to the <a href=\":main\">main page</a>to find the information you need",
+		"pl": "<em>Niestety strona, której zażądałeś, nie została znaleziona.</em> <br> Możesz przejść do <a href=\":main\">strony głównej</a>, aby znaleźć potrzebne informacje"
+	},
+	"Lorem": {
+		"ru": "Lorem",
+		"uk": "Lorem",
+		"en": "Lorem",
+		"pl": "Lorem"
+	}
+}

@@ -1,0 +1,50 @@
+////
+/// @group _settings/
+////
+
+/// Хедперы видимости элементов
+/// @requires {mixin} media
+/// @param {Map} $points [()] - карта брейкпоинтов, для которых нужно сделать хелперы
+@mixin helpers-show-hide ($points: ()) {
+	._hide {
+		display: none;
+	}
+
+	.touchevents {
+		._hide-touch {
+			display: none;
+		}
+	}
+
+	.no-touchevents {
+		._hide-notouch {
+			display: none;
+		}
+	}
+
+	._unhidden {
+		display: initial;
+	}
+
+	@media print {
+		._noprint {
+			display: none;
+		}
+	}
+
+	@each $point, $size in $points {
+		$mod: $point + $sep;
+
+		@include media($size) {
+			._#{$mod}hide {
+				display: none;
+			}
+		}
+
+		@include media($size, max) {
+			._#{$mod}show {
+				display: none;
+			}
+		}
+	}
+}

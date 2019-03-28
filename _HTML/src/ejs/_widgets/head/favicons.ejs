@@ -1,0 +1,33 @@
+<%
+	/** Подключение фавиконок
+	 * @name head/favicons.ejs */
+
+	// Выгружаем инструменты
+	const {media, comment} = app.module;
+
+	// !!! ВНИМАНИЕ
+	//
+	// Для генерации фавиконок рекомендуется использовать
+	// https://realfavicongenerator.net/
+	//
+	// Уберите с кода link на саму иконку favicon.ico
+	// Она должна находится в корне проекта и браузер сам делает на нее запрос
+	//
+	// Замените все пути функцией media в директорию assets/favicons/**
+	// Для файла manifest.json - отключите версионирование, третий аргумент функции media - `false`
+	//
+	// Внутри файлов manifest.json и browserconfig.xml все пути должны быть относительно этих фалов
+	// к примеру => "src": "./android-chrome-192x192.png"
+	//           => <square70x70logo src="./mstile-70x70.png"/>
+-%>
+<%- comment.php('Favicons') %>
+<link rel="apple-touch-icon" sizes="180x180" href="<%- media('assets/favicons/apple-touch-icon.png') %>">
+<link rel="icon" type="image/png" sizes="32x32" href="<%- media('assets/favicons/favicon-32x32.png') %>">
+<link rel="icon" type="image/png" sizes="16x16" href="<%- media('assets/favicons/favicon-16x16.png') %>">
+<link rel="manifest" href="<%- media('assets/favicons/manifest.json', undefined, false) %>">
+<link rel="mask-icon" href="<%- media('assets/favicons/safari-pinned-tab.svg') %>" color="#d01400">
+<meta name="apple-mobile-web-app-title" content="SeoEvolution">
+<meta name="application-name" content="SeoEvolution">
+<meta name="msapplication-config" content="<%- media('assets/favicons/browserconfig.xml') %>">
+<meta name="theme-color" content="#ffffff">
+

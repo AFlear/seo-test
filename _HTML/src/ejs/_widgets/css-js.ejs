@@ -1,0 +1,26 @@
+<%
+	/** Подключение внешних стилей и скриптов
+	 * @name css-js.ejs */
+
+	// выгружаем инструменты
+	const {media, insert, comment} = app.module;
+-%>
+
+<%- comment.php('Основные стили страницы') %>
+<link rel="stylesheet" href="<%- media('assets/css/vendors.css') %>">
+<link rel="stylesheet" href="<%- media('assets/css/editor.css') %>">
+<link rel="stylesheet" href="<%- media('assets/css/style.css') %>">
+<link rel="stylesheet" href="<%- media('assets/css/helpers.css') %>">
+
+<%- comment.todoPhp('Инлайновый вывод скриптовых переводов для плагинов и модулей') %>
+<%- insert.fromDist('./hidden/i18n/php-translations-script.php', false); %>
+
+<%- comment.todoPhp('Заменить на программный файл `/Media/programmer/js/b2f-api.js`') %>
+<script src="<%- media('assets/js/static/b2f-api.js') %>"></script>
+
+<%- comment.php('Основные скрипты страницы') %>
+<script src="<%- media('assets/js/modernizr.js') %>"></script>
+<script src="<%- media('assets/js/vendors.js') %>"></script>
+<script src="<%- media('assets/js/initialize.js') %>"></script>
+
+<%- comment.todoPhp('Определение старых браузеров') %>

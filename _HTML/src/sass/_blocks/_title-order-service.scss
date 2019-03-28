@@ -1,0 +1,42 @@
+.title-order-service-container {
+	position: relative;
+	&:before {
+		opacity: .25;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		z-index: 5;
+		height: 310px;
+		background: #fff url("/Media/assets/images/backgrounds/dot-pattern.png");
+		@include media(lg, max) {
+			display: none;
+		}
+	}
+}
+
+.title-order-service {
+	@include resp-val(15, 70, 768, 1280, 'padding-top');
+	&__meta {
+		z-index: 9;
+		position: relative;
+		font-weight: 700;
+		color: #333;
+		text-align: center;
+		line-height: rem(36);
+		@include resp-val(14, 26, 768, 1280);
+		@include media(md, max) {
+			line-height: rem(24);
+		}
+	}
+	&__img {
+		z-index: 9;
+		position: relative;
+		@include media(md, max) {
+			display: none;
+		}
+	}
+}

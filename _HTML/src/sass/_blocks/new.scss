@@ -1,0 +1,51 @@
+.new {
+	@include resp-val(15, 70, 320, 1280, 'padding-top');
+	@include resp-val(10, 50, 320, 1280, 'padding-bottom');
+
+	color: #6d6d6d;
+	line-height: rem(30);
+
+	&__info {
+		display: flex;
+		svg {
+			fill: #333;
+
+		}
+		.date,
+		.views {
+			display: flex;
+			align-items: center;
+			padding-right: 5px;
+			span {
+				padding: 0 10px;
+			}
+
+		}
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+
+		li {
+			position: relative;
+			padding-left: 20px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				width: 9px;
+				height: 9px;
+				z-index: 1;
+				display: block;
+				border-radius: 50%;
+				background-color: $color-brand;
+				bottom: 0;
+				top: 0;
+				margin: auto;
+			}
+		}
+	}
+
+}

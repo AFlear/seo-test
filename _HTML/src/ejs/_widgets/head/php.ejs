@@ -1,0 +1,48 @@
+<%
+	/** test
+	 * @name head/php.ejs */
+
+	// выгружаем инструменты
+	const {testOne, paths, argv, lang: LANG} = app.data;
+	const {host} = app.module;
+
+
+	const HOST = host();
+	const MEDIA = paths.toMedia;
+	const MEDIA_PATH = host.mediaPath().replace(HOST, '');
+	const HIDDEN_FOLDER = ~app.viewPath.indexOf('hidden') ? '' : 'hidden/';
+
+	const phpBanner = `<?php
+		namespace Core;
+		class HTML {
+			public static function media($file, $absolute = false, $version = true)	{
+				if ($version) {
+					$v = '?v=' . filemtime(HOST . '${MEDIA_PATH}' . trim($file, '/'));
+				}
+				if ($absolute) {
+					return 'http://' . $_SERVER['HTTP_HOST'] . '${MEDIA}' . trim($file, '/') . $v;
+				}
+				return '${MEDIA}' . trim($file, '/') . $v;
+			}
+		}
+
+		/* метод перевода */
+		if (!function_exists('__')) {
+			include('${HIDDEN_FOLDER}i18n/I18n.php');
+			\\I18n::lang('${LANG}');
+		}
+
+		/* определение хоста */
+		if (!defined('HOST')) {
+			define('HOST', '${HOST}');
+		}
+	?>`;
+
+	if (argv.production) {
+		// noinspection JSAnnotator
+		return phpBanner.replace(/(\r)?\n/g, ' ').replace(/\t/g, '');
+	}
+
+	// noinspection JSAnnotator
+	return phpBanner;
+%>

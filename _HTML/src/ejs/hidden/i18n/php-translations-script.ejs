@@ -1,0 +1,39 @@
+<%
+	/** Принт переводов для передачи их в скрипт
+	 * через глобальный объект `window.jsTranslations`
+	 * @name hidden/php-translations-script.ejs */
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+	// выгружаем инструменты
+	const {__} = app.module;
+-%>
+<%
+	const cloneDeep = app.requireNodeModule('lodash/cloneDeep');
+
+	// указываем внутренние свойства переводов
+	// и их данные с JSON файлов
+	const data = {
+		mfp: cloneDeep(app.require('module/l18n/magnific-popup.json')),
+		validation: cloneDeep(app.require('module/l18n/validation.json'))
+	};
+
+	for (let key in data) {
+		let list = data[key];
+		for (let prop in list) {
+			let propName = prop.split('--').pop();
+			list[propName] = __(prop);
+			delete list[prop];
+		}
+	}
+-%>
+<script>
+	;(function(window) {
+		if (window.jsTranslations) {
+			return;
+		}
+		window.jsTranslations = <%- JSON.stringify(data, null, '\t') %>;
+	})(window);
+</script>

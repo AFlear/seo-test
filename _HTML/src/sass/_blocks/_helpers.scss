@@ -1,0 +1,206 @@
+%abs-center {
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+._bg-image-cover {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	&.b-lazy {
+		background-color: #222;
+	}
+}
+
+._bg-image-contain {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	&.b-lazy {
+		background-color: #222;
+	}
+}
+
+._opacity {
+	opacity: 0.25;
+}
+
+._grid-divider {
+	.grid > & {
+		background-image: url('/Media/assets/images/backgrounds/dot-pattern.png');
+		background-position: center;
+		background-repeat: repeat-x;
+		height: 4px;
+		width: 100%;
+		flex-basis: 100%;
+		padding: 0;
+		@include resp-val(25, 65, 320, 1280, 'margin-top');
+		@include resp-val(25, 65, 320, 1280, 'margin-bottom');
+		max-width: 100%;
+		opacity: 0.25;
+	}
+}
+
+._grid-divider-sm {
+	.grid > & {
+		background-image: url('/Media/assets/images/backgrounds/dot-pattern.png');
+		background-position: center;
+		background-repeat: repeat-x;
+		height: 4px;
+		width: 100%;
+		flex-basis: 100%;
+		padding: 0;
+		@include resp-val(15, 10, 320, 1280, 'margin-top');
+		@include resp-val(20, 50, 320, 1280, 'margin-bottom');
+		max-width: 100%;
+		opacity: 0.25;
+	}
+}
+
+._bg-dotted {
+	background-image: url('/Media/assets/images/backgrounds/dot-pattern.png');
+}
+
+._section-bg-dot {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		background-image: url('/Media/assets/images/backgrounds/dot-pattern.png');
+		width: 100%;
+		height: 40%;
+		opacity: 0.25;
+	}
+}
+
+._section-bg-dot-sm {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		background-image: url('/Media/assets/images/backgrounds/dot-pattern.png');
+		width: 100%;
+		height: 20%;
+		opacity: 0.25;
+	}
+}
+
+._gradient-truncate {
+	position: relative;
+	&:after {
+		content: '\00a0';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		max-width: 270px;
+		height: 40%;
+		background-image: linear-gradient(to bottom, transparent, #f8fafa 85%);
+
+		background: -moz-linear-gradient(top, rgba(248,250,250,0) 0%, rgba(250,250,250,0.24) 13%, rgba(250,250,250,0.5) 27%, rgba(249,250,250,0.61) 33%, rgba(248,250,250,0.67) 38%, rgba(248,250,250,1) 64%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,250,250,0)), color-stop(13%, rgba(250,250,250,0.24)), color-stop(27%, rgba(250,250,250,0.5)), color-stop(33%, rgba(249,250,250,0.61)), color-stop(38%, rgba(248,250,250,0.67)), color-stop(64%, rgba(248,250,250,1)));
+		background: -webkit-linear-gradient(top, rgba(248,250,250,0) 0%, rgba(250,250,250,0.24) 13%, rgba(250,250,250,0.5) 27%, rgba(249,250,250,0.61) 33%, rgba(248,250,250,0.67) 38%, rgba(248,250,250,1) 64%);
+		background: -o-linear-gradient(top, rgba(248,250,250,0) 0%, rgba(250,250,250,0.24) 13%, rgba(250,250,250,0.5) 27%, rgba(249,250,250,0.61) 33%, rgba(248,250,250,0.67) 38%, rgba(248,250,250,1) 64%);
+		background: -ms-linear-gradient(top, rgba(248,250,250,0) 0%, rgba(250,250,250,0.24) 13%, rgba(250,250,250,0.5) 27%, rgba(249,250,250,0.61) 33%, rgba(248,250,250,0.67) 38%, rgba(248,250,250,1) 64%);
+		background: linear-gradient(to bottom, rgba(248,250,250,0) 0%, rgba(250,250,250,0.24) 13%, rgba(250,250,250,0.5) 27%, rgba(249,250,250,0.61) 33%, rgba(248,250,250,0.67) 38%, rgba(248,250,250,1) 64%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8fafa', endColorstr='#f8fafa', GradientType=0 );
+
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		//@include media(md, max) {
+		//	width: 0;
+		//	height: 0;
+		//}
+
+	}
+
+}
+
+._btn-reviews-block {
+	display: flex;
+	white-space: nowrap;
+	padding: 4% 0 0;
+	@include media(def, max) {
+		justify-content: center;
+	}
+	a{
+		font-weight: 900;
+	}
+}
+
+._section-divider {
+	height: rem(70);
+	@extend ._bg-dotted;
+}
+
+._btn-white {
+	color: white;
+}
+
+._btn-size-sm {
+	max-height: 50px;
+}
+
+i.w-rub {
+	font-style: normal;
+	font-weight: normal;
+	vertical-align: middle;
+	border-bottom: 1px solid;
+	line-height: 0.3em;
+	display: inline-block;
+	width: 0.4em;
+	margin-right: 0.3em;
+}
+
+@include media(def, min) {
+	.top-btn{
+		display: none;
+		border: 4px solid #ffb900;
+		position: fixed;
+		bottom: 20%;
+		right: 4rem;
+		width: 4rem;
+		height: 4rem;
+		cursor: pointer;
+		z-index: 10;
+
+		&__icon{
+			position: relative;
+			display: inline-block;
+
+			&::after,
+			&::before {
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				content: '';
+				position: absolute;
+				width: 5px;
+				height: 1.5rem;
+				background-color: $color-brand;
+
+			}
+			&::after{
+				transform: rotate(-45deg);
+				top: 1rem;
+				left: 2rem;
+			}
+			&::before{
+				transform: rotate(45deg);
+				top: 1rem;
+				left: 1.2rem;
+			}
+		}
+
+
+	}
+}

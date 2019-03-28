@@ -1,0 +1,11 @@
+////
+/// @group style.scss
+////
+
+// сбор всех основных стилей при отключеном JavaScript
+// -------------------------------------------------
+
+@import "_settings/all";
+
+// css
+@import "_system/noscript-msg";

@@ -1,0 +1,114 @@
+.services-list {
+	position: relative;
+	@include resp-val(10, 45, 320, 1280, 'margin-top');
+	@include resp-val(10, 50, 320, 1280, 'margin-bottom');
+}
+
+.service {
+	box-shadow: 0 3px 79px 0 rgba(2, 3, 3, 0.11);
+	background-color: #fff;
+	position: relative;
+	height: 100%;
+
+	&__icon {
+		position: relative;
+		margin: auto;
+		@include resp-val(80, 240, 768, 1280, 'height');
+		@include resp-val(80, 320, 768, 1280, 'width');
+		@include resp-val(5, 10, 320, 1280, 'margin-top');
+		img {
+			@extend %abs-center;
+			width: 46%;
+		}
+	}
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 900;
+		text-align: center;
+		text-transform: uppercase;
+		padding-bottom: 20px;
+		line-height: 1.2;
+		@include resp-val(12, 20, 320, 1280);
+		@include resp-val(10, 60, 780, 1366, 'padding-left');
+		@include resp-val(10, 60, 780, 1366, 'padding-right');
+		@include resp-val(45, 70, 320, 1280, 'height');
+		overflow-y: hidden;
+		&:hover {
+			color: $color-brand;
+			text-decoration: underline;
+		}
+	}
+
+	&__list {
+		display: block;
+		line-height: 1.2;
+		list-style: none;
+		padding-left: 0;
+		margin: 0;
+		li {
+			font-size: rem(16);
+			font-weight: 500;
+			@include resp-val(5, 10, 320, 1280, 'padding-top');
+			@include resp-val(5, 10, 320, 1280, 'padding-bottom');
+			&:hover {
+				text-decoration: underline;
+			}
+
+		}
+
+		@include resp-val(10, 50, 780, 1366, 'padding-left');
+		@include resp-val(10, 40, 780, 1366, 'padding-right');
+		@include resp-val(10, 30, 320, 1280, 'padding-bottom');
+
+	}
+
+	@include media(md, max) {
+		flex-basis: 100%;
+		display: flex;
+		align-items: center;
+		margin-top: 20px;
+		flex-wrap: wrap;
+		& + & {
+		}
+
+		&__icon {
+			flex-grow: 1;
+			margin: 0 auto;
+			img {
+				width: 50%;
+			}
+		}
+		&__title {
+			text-align: right;
+			padding-bottom: 0;
+			padding-right: 5%;
+			display: block;
+			height: auto;
+			flex-grow: 1;
+			flex-basis: 70%;
+
+		}
+		&__list {
+			display: flex;
+			flex-basis: 100%;
+			flex-wrap: wrap;
+			li {
+				flex-basis: 50%;
+				padding: 5px;
+			}
+
+		}
+	}
+	@media (max-width: 560px) {
+		.service__icon {
+			img {
+				width: 75%;
+			}
+		}
+
+	}
+}
+

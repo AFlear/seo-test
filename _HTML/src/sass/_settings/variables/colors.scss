@@ -1,0 +1,35 @@
+////
+/// @group _settings/
+////
+
+/// Карта цветов
+/// @type {Map}
+/// @prop {Color} $colors.link
+$colors: (
+	// Основные
+	black: #000,
+	white: #fff,
+	gray: #868686,
+	bg: #f2f1fd,
+	text: #234,
+	accent: #fcfcca,
+
+
+	/// Ссылки
+	link: #4444fe,
+	link-visited: #5806b0,
+	link-hover: #fe4444,
+	link-active: #000,
+
+	// Цветовые статусы
+	primary: #2196F3,
+	secondary: #313131,
+	info: #ebba10,
+	success: #00b3fe,
+	warning: #c89600,
+	danger: #f00
+
+);
+
+$color-brand: #454c4c;
+

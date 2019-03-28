@@ -1,0 +1,15 @@
+////
+/// @group style.scss
+////
+
+// сбор всех стилей сторонних библиотеки
+// -------------------------------------------------
+
+@import "_settings/all";
+
+// magnific-popup
+@import "magnific-popup/src/css/main";
+@import "_blocks/magnific-popup";
+@import "noty/src/noty";
+@import "_vendors/slick";
+

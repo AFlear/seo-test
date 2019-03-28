@@ -1,0 +1,278 @@
+{
+	"jquery-validation--required": {
+		"ru": "Это поле необходимо заполнить!",
+		"uk": "Це поле необхідно заповнити!",
+		"en": "This field is required!",
+		"pl": "To pole należy wypełnić!"
+	},
+	"jquery-validation--required_checker": {
+		"ru": "Этот параметр - обязателен!",
+		"uk": "Цей параметр - обов\\'язковий!",
+		"en": "This parameter is required!",
+		"pl": "Parametr ten jest wymagany!"
+	},
+	"jquery-validation--required_select": {
+		"ru": "Этот параметр - обязателен!",
+		"uk": "Цей параметр - обов\\'язковий!",
+		"en": "This parameter is required!",
+		"pl": "Parametr ten jest wymagany!"
+	},
+	"jquery-validation--password": {
+		"ru": "Укажите корректный пароль!",
+		"uk": "Вкажіть корректний пароль!",
+		"en": "Please fix this field.",
+		"pl": "Określ paroll!"
+	},
+	"jquery-validation--password_space": {
+		"ru": "Пароль не может начинаться с пробельных символов",
+		"uk": "Пароль не може починатися з пробільних символів",
+		"en": "The password can not begin with whitespace",
+		"pl": "Hasło nie może zaczynać się od białych spacji"
+	},
+	"jquery-validation--remote": {
+		"ru": "Пожалуйста, введите правильное значение!",
+		"uk": "Будь ласка, введіть правильне значення!",
+		"en": "Please enter a valid email address.",
+		"pl": "Proszę, wprowadźcie prawidłowe znaczenie!"
+	},
+	"jquery-validation--email": {
+		"ru": "Пожалуйста, введите корректный адрес электронной почты!",
+		"uk": "Будь ласка, введіть коректну адресу електронної пошти!",
+		"en": "Please enter a valid e-mail.",
+		"pl": "Proszę wpisać poprawny adres e-mail!"
+	},
+	"jquery-validation--email_dot": {
+		"ru": "Недопустимое положения символа &quot;.&quot;",
+		"uk": "Неприпустиме положення символу &quot;.&quot;",
+		"en": "Invalid character position &quot;.&quot;",
+		"pl": "Nieprawidłowa pozycja znaku &quot;.&quot;"
+	},
+	"jquery-validation--email_slash": {
+		"ru": "Часть адреса после символа &quot;@&quot; не может содержать сиволы &quot;\\\\&quot; или &quot;\/&quot;",
+		"uk": "Частина адреси після символу &quot;@&quot; не може містити символи &quot;\\\\&quot; или &quot;\/&quot;",
+		"en": "The part of the address after the &quot;@&quot; symbol can not contain symbols &quot;\\&quot; или &quot;\/&quot;",
+		"pl": "Część adresu po symbolu &quot;@&quot; nie może zawierać symboli &quot;\\\\&quot; или &quot;\/&quot;"
+	},
+	"jquery-validation--email_at": {
+		"ru": "Адрес электронной почты должен содержать символ &quot;@&quot;",
+		"uk": "Адреса електронної пошти повинен містити символ &quot;@&quot;",
+		"en": "An email address must contain a symbol &quot;@&quot;",
+		"pl": "Adres e-mail musi zawierać symbol &quot;@&quot;"
+	},
+	"jquery-validation--email_at-multiple": {
+		"ru": "Адрес электронной не может содержать более одного символа &quot;@&quot;",
+		"uk": "Адреса електронної не може містити більше одного символу &quot;@&quot;",
+		"en": "An e-mail address can not contain more than one character &quot;@&quot;",
+		"pl": "Adres e-mail nie może zawierać więcej niż jednego znaku &quot;@&quot;"
+	},
+	"jquery-validation--email_at-start": {
+		"ru": "Адрес неполный. Введите часть адреса до символа &quot;@&quot;",
+		"uk": "Адреса неповний. Введіть частину адреси до символу &quot;@&quot;",
+		"en": "The address is incomplete. Enter part of the address before the symbol &quot;@&quot;",
+		"pl": "Adres jest niekompletny. Wprowadź część adresu przed symbolem &quot;@&quot;"
+	},
+	"jquery-validation--email_at-end": {
+		"ru": "Адрес неполный. Введите часть адреса после символа &quot;@&quot;",
+		"uk": "Адреса неповний. Введіть частину адреси після символу &quot;@&quot;",
+		"en": "The address is incomplete. Enter part of the address after the character &quot;@&quot;",
+		"pl": "Adres jest niekompletny. Wpisz po adresie część adresu &quot;@&quot;"
+	},
+	"jquery-validation--url": {
+		"ru": "Пожалуйста, введите корректный URL!",
+		"uk": "Будь ласка, введіть коректний URL!",
+		"en": "Please enter a valid URL!",
+		"pl": "Proszę podać poprawny adres URL!"
+	},
+	"jquery-validation--url_protocol": {
+		"ru": "URL должен начинаться с корректного протокола, к примеру http://!",
+		"uk": "URL повинен починатися з коректного протоколу, наприклад http://!",
+		"en": "The URL must begin with a valid protocol, for example http://",
+		"pl": "Adres URL powinien rozpoczynać się od prawidłowego protokołu, na przykład http://!"
+	},
+	"jquery-validation--url_domen": {
+		"ru": "URL должен должен содержать доменное имя!",
+		"uk": "URL повинен повинен містити доменне ім'я!",
+		"en": "The URL must contain a domain name!",
+		"pl": "Adres URL musi zawierać nazwę domeny!"
+	},
+	"jquery-validation--url_domen-length": {
+		"ru": "Минимальная длина доменного имени - 2 символа",
+		"uk": "Мінімальна довжина доменного імені - 2 символи",
+		"en": "The minimum length of a domain name is 2 characters",
+		"pl": "Minimalna długość nazwy domeny to 2 znaki"
+	},
+	"jquery-validation--date": {
+		"ru": "Пожалуйста, введите корректную дату!",
+		"uk": "Будь ласка, введіть коректну дату!",
+		"en": "Please enter a valid date!",
+		"pl": "Wpisz poprawną datę!"
+	},
+	"jquery-validation--dateISO": {
+		"ru": "Пожалуйста, введите корректную дату в формате ISO!",
+		"uk": "Будь ласка, введіть коректну дату у форматі ISO!",
+		"en": "Please enter a valid number.",
+		"pl": "Proszę podać poprawną datę w formacie ISO!"
+	},
+	"jquery-validation--number": {
+		"ru": "Пожалуйста, введите число!",
+		"uk": "Будь ласка, введіть число!",
+		"en": "Please enter only digits.",
+		"pl": "Proszę wpisać numery!"
+	},
+	"jquery-validation--digits": {
+		"ru": "Пожалуйста, вводите только цифры!",
+		"uk": "Будь ласка, вводите тільки цифри!",
+		"en": "Please enter a valid credit card number.",
+		"pl": "Proszę wpisać tylko liczby!"
+	},
+	"jquery-validation--creditcard": {
+		"ru": "Пожалуйста, введите правильный номер кредитной карты!",
+		"uk": "Будь ласка, введіть правильний номер кредитної картки!",
+		"en": "Please enter the same value again.",
+		"pl": "Proszę podać poprawny numer karty kredytowej!"
+	},
+	"jquery-validation--equalTo": {
+		"ru": "Пожалуйста, введите такое же значение ещё раз!",
+		"uk": "Будь ласка, введіть таке ж значення ще раз!",
+		"en": "Please enter no more than {0} characters.",
+		"pl": "Proszę ponownie wprowadzić wartość!"
+	},
+	"jquery-validation--maxlength": {
+		"ru": "Пожалуйста, введите не более {0} символов!",
+		"uk": "Будь ласка, введіть не більш {0} символів!",
+		"en": "Please select no more than {0} parameters!",
+		"pl": "Proszę wpisać nie więcej niż {0} znaków!"
+	},
+	"jquery-validation--maxlength_checker": {
+		"ru": "Пожалуйста, выберите не более {0} параметров!",
+		"uk": "Будь ласка, виберіть не більш {0} параметрів!",
+		"en": "Please select no more than {0} items!",
+		"pl": "Proszę wybrać nie więcej niż {0} parametrów!"
+	},
+	"jquery-validation--maxlength_select": {
+		"ru": "Пожалуйста, выберите не более {0} пунктов!",
+		"uk": "Будь ласка, виберіть не більш {0} пунктів!",
+		"en": "Please enter at least {0} characters.",
+		"pl": "Proszę wybrać nie więcej niż {0} pozycji!"
+	},
+	"jquery-validation--minlength": {
+		"ru": "Пожалуйста, введите не менее {0} символов!",
+		"uk": "Будь ласка, введіть не менш {0} символів!",
+		"en": "Please select at least {0} options!",
+		"pl": "Proszę podać co najmniej {0} znaków!"
+	},
+	"jquery-validation--minlength_checker": {
+		"ru": "Пожалуйста, выберите не менее {0} параметров!",
+		"uk": "Будь ласка, виберіть не менше {0} параметрів!",
+		"en": "Please select at least {0} items!",
+		"pl": "Wybierz co najmniej {0} opcje!"
+	},
+	"jquery-validation--minlength_select": {
+		"ru": "Пожалуйста, выберите не менее {0} пунктов!",
+		"uk": "Будь ласка, виберіть не менш {0} пунктів!",
+		"en": "Please enter a value between {0} and {1} characters long.",
+		"pl": "Wybierz co najmniej {0} przedmioty!"
+	},
+	"jquery-validation--rangelength": {
+		"ru": "Пожалуйста, введите значение длиной от {0} до {1} символов!",
+		"uk": "Будь ласка , введіть значення довжиною від {0} до {1} символів!",
+		"en": "Please select from {0} to {1} options!",
+		"pl": "Prosimy podać wartość pomiędzy {0} {1} znaków!"
+	},
+	"jquery-validation--rangelength_checker": {
+		"ru": "Пожалуйста, выберите от {0} до {1} параметров!",
+		"uk": "Будь ласка, виберіть від {0} до {1} параметрів!",
+		"en": "Please select from {0} to {1} items!",
+		"pl": "Proszę wybrać od {0} do {1} parametrów!"
+	},
+	"jquery-validation--rangelength_select": {
+		"ru": "Пожалуйста, выберите от {0} до {1} пунктов!",
+		"uk": "Будь ласка, виберіть від {0} до {1} пунктів!",
+		"en": "Please enter a value between {0} and {1}.",
+		"pl": "Proszę wybrać od {0} do {1} punktów!"
+	},
+	"jquery-validation--range": {
+		"ru": "Пожалуйста, укажите значение от {0} до {1}!",
+		"uk": "Будь ласка, вкажіть значення від {0} до {1}!",
+		"en": "Please enter a value less than or equal to {0}.",
+		"pl": "Prosimy podać wartość między {0} - {1}!"
+	},
+	"jquery-validation--max": {
+		"ru": "Пожалуйста, укажите значение, меньше или равное {0}!",
+		"uk": "Будь ласка, вкажіть значення, менше або рівне {0}!",
+		"en": "Please enter a value greater than or equal to {0}.",
+		"pl": "Prosimy podać wartość mniejsza lub równa {0}!"
+	},
+	"jquery-validation--min": {
+		"ru": "Пожалуйста, укажите значение, больше или равное {0}!",
+		"uk": "Будь ласка, вкажіть значення, більше або рівне {0}!.",
+		"en": "Allowed file extensions: {0}!",
+		"pl": "Prosimy podać wartość większą lub równą {0}!"
+	},
+	"jquery-validation--maxupload": {
+		"ru": "Максимальное количество файлов: {0}!",
+		"uk": "Максимальна кількість файлів: {0}!",
+		"en": "Maximum number of files {0}KB!",
+		"pl": "Maksymalna liczba plików: {0}!"
+	},
+	"jquery-validation--filetype": {
+		"ru": "Допустимые расширения файлов: {0}!",
+		"uk": "Допустимі розширення файлів: {0}!",
+		"en": "Maximum size {0}KB!",
+		"pl": "Dopuszczalne rozszerzenia plików: {0}!"
+	},
+	"jquery-validation--filesize": {
+		"ru": "Максимальный объем {0}KB!",
+		"uk": "Максимальний обсяг {0}KB!",
+		"en": "Maximum size {0}KB! ~   Maximum amount of each file {0}KB!",
+		"pl": "Maksymalny rozmiar {0}KB!"
+	},
+	"jquery-validation--filesizeeach": {
+		"ru": "Максимальный объем каждого файла {0}KB!",
+		"uk": "Максимальный размер каждого файла {0}KB!",
+		"en": "Specify a value corresponding to the mask {0}!",
+		"pl": "Maksymalny rozmiar każdego plika {0}KB!"
+	},
+	"jquery-validation--pattern": {
+		"ru": "Укажите значение соответствующее маске {0}!",
+		"uk": "Вкажіть значення відповідне {0}!",
+		"en": "Please enter the correct word meanings!",
+		"pl": "Określ wartość odpowiadającą maski {0}!"
+	},
+	"jquery-validation--word": {
+		"ru": "Введите корректное словесное значение!",
+		"uk": "Введіть коректне ім\\'я!",
+		"en": "Please enter a valid username!",
+		"pl": "Wprowadź poprawne znaczenie słów!"
+	},
+	"jquery-validation--login": {
+		"ru": "Введите корректный логин!",
+		"uk": "Введіть коректний логін!",
+		"en": "Invalid phone number format Ukrainian",
+		"pl": "Proszę podać poprawną nazwę użytkownika!"
+	},
+	"jquery-validation--phoneua": {
+		"ru": "Некорректный формат украинского номера",
+		"uk": "Некоректний формат українського номера",
+		"en": "Please enter valid phone number!",
+		"pl": "Nieprawidłowy format numeru telefonu ukraiński"
+	},
+	"jquery-validation--phone": {
+		"ru": "Введите коректный номер телефона",
+		"uk": "Введіть коректний номер телефона",
+		"en": "Please enter valid phone number!",
+		"pl": "Wprowadź korektno numer telefonu"
+	},
+	"jquery-validation--nospace": {
+		"ru": "Текст не может состоять только из пробельных символов",
+		"uk": "Текст не може складатися тільки з символів пробілів",
+		"en": "Text can not consist of whitespace characters only",
+		"pl": "Tekst nie może składać się tylko z białych znaków"
+	},
+	"jquery-validation--validdata": {
+		"ru": "Укажите кастомные сообщение при помощи атрибута data-msg!",
+		"uk": "Укажите кастомные сообщение при помощи атрибута data-msg!",
+		"en": "Укажите кастомные сообщение при помощи атрибута data-msg!",
+		"pl": "Укажите кастомные сообщение при помощи атрибута data-msg!"
+	}
+}

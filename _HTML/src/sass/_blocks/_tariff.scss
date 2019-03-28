@@ -1,0 +1,142 @@
+.tarrifs-container {
+	position: relative;
+
+}
+
+.tariffs-list {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.tariff {
+	$this: &;
+
+	//flex-basis: 260px;
+	@include resp-val(15, 50, 320, 1280, 'margin-top');
+	@include resp-val(5, 16, 320, 1280, 'margin-left');
+	@include resp-val(5, 16, 320, 1280, 'margin-right');
+	//@include resp-val(5, 10, 320, 1280, 'padding-bottom');
+	@include media(sm, max) {
+		width: 100%;
+	}
+
+	&__body {
+		box-shadow: 0 3px 79px 0 rgba(2, 3, 3, 0.11);
+		display: flex;
+		background-color: #e6e6e6;
+		flex-wrap: wrap;
+	}
+
+	&__title {
+		height: 85px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-transform: uppercase;
+		padding-bottom: 30px;
+		background-color: #e6e6e6;
+		font-weight: 900;
+		text-align: center;
+		@include resp-val(12, 18, 320, 1280);
+		@include resp-val(10, 25, 320, 1280, 'padding-top');
+		@include resp-val(5, 15, 320, 1280, 'padding-left');
+		@include resp-val(5, 15, 320, 1280, 'padding-right');
+		@include resp-val(5, 20, 320, 1280, 'padding-bottom');
+		@include media(sm, max) {
+			width: 50%;
+		}
+	}
+	&__price {
+		font-weight: 900;
+		text-align: center;
+		@include resp-val(14, 40, 320, 1280);
+		padding: rem(20px);
+		@include resp-val(5, 55, 320, 1280, 'padding-top');
+		@include resp-val(5, 55, 320, 1280, 'padding-bottom');
+		text-transform: uppercase;
+		background-color: #fff;
+		font-family: Arial, serif;
+		span {
+			font-weight: 400;
+		}
+		@include media(sm, max) {
+			width: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&__text {
+		@include resp-val(15, 55, 320, 1280, 'padding-top');
+		@include resp-val(8, 30, 320, 1280, 'padding-left');
+		@include resp-val(8, 30, 320, 1280, 'padding-right');
+		@include resp-val(5, 25, 320, 1280, 'padding-bottom');
+		//@include resp-val(15, 20, 320, 1280, 'padding-bottom');
+
+		$lineHeight: 1.5;
+		line-height: $lineHeight;
+		max-height: 16px * $lineHeight * 14;
+		overflow-y: hidden;
+
+		@media(max-width: 1020px) {
+			max-height: 14px * $lineHeight * 12;
+			font-size: 14px;
+
+		}
+		@media(max-width: 768px) {
+			max-height: 12px * $lineHeight * 8;
+			font-size: 12px;
+		}
+	}
+
+	&__footer {
+		text-transform: uppercase;
+		font-weight: 900;
+		text-align: center;
+		@include resp-val(12, 16, 320, 1280);
+		@include resp-val(10, 15, 768, 1280, 'margin-top');
+		//@include resp-val(5, 15, 320, 1280, 'margin-bottom');
+
+	}
+
+	@include media(sm) {
+		//flex-basis: 60%;
+		display: flex;
+		flex-basis: 260px;
+		flex-direction: column;
+		width: 100%;
+		&__body {
+			display: flex;
+			flex-grow: 1;
+			flex-direction: column;
+		}
+		&__text {
+			flex-grow: 1;
+		}
+
+	}
+
+	&:hover {
+		#{$this}__title {
+			background-color: map-get($colors, 'primary');
+			color: #fff;
+		}
+		#{$this}__price {
+			background-color: map-get($colors, 'primary');
+			color: #fff;
+		}
+		#{$this}__footer {
+			.inline-button--a {
+				background-color: map-get($colors, 'primary');
+				color: #fff;
+				border: 2px solid map-get($colors, 'primary');
+			}
+
+		}
+	}
+}
+

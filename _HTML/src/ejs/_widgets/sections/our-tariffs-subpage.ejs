@@ -1,0 +1,25 @@
+<%
+let {tariffs={}} = app.entry
+%>
+
+<div class="tarrifs-container">
+
+		<div class=" tariffs-list">
+			<% tariffs.forEach(tariff=>{ %>
+			<div class="tariff">
+				<div class="tariff__body">
+					<div class="tariff__title"><%= tariff.title %></div>
+					<div class="tariff__price"><%= tariff.price %><span>₽</span></div>
+					<div class="tariff__text _gradient-truncate"><%= tariff.text %></div>
+				</div>
+				<div class="tariff__footer">
+					<a  class="inline-button--a js-mfp-ajax" data-mfp-src="hidden/callback-complex.php">
+						заказать
+					</a>
+				</div>
+			</div>
+
+			<% }) %>
+
+		</div>
+</div>

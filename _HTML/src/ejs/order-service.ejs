@@ -1,0 +1,26 @@
+<%
+/** Шаблон страницы - заказать выбранную услугу
+ * @name index.ejs */
+
+/** установка основного лейаута */
+app.setLayout('base.ejs');
+
+/** расширение глобального объекта app
+ * @see module:core */
+app.require('core.js')(app);
+
+// выгружаем инструменты
+const {currentView} = app.data;
+let title = "Контекстная реклама Google и Яндекс";
+let image = 'assets/images/breadcrumbs/order-service.jpg';
+%>
+
+<%- app.widget('sections/breadcrumbs.ejs', {title, image}) %>
+<%- app.widget('sections/write-us.ejs')%>
+<%- app.widget('sections/title-order-service.ejs')%>
+<%- app.widget('sections/stages-work.ejs')%>
+<%- app.widget('sections/price-order.ejs')%>
+<%- app.widget('sections/work-advantages.ejs')%>
+<div class="_section-divider"></div>
+<%- app.widget('sections/partners.ejs')%>
+<%- app.widget('sections/order-form.ejs')%>

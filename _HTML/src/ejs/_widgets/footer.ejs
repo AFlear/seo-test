@@ -1,0 +1,82 @@
+<%
+/** подвал сайта
+ * @name footer.ejs */
+%>
+<div class="_section-divider"></div>
+<div class="footer">
+	<div class="footer__body">
+		<div class="container">
+			<div class="grid grid--space-def _sm-justify-center">
+				<div class="gcell gcell--6 gcell--sm-auto gcell--def-2">
+					<div class="footer-column">
+						<div class="footer-column__title">Продвижение</div>
+						<ul class="footer-column__list">
+							<li><a href="#">С оплатой за трафик</a></li>
+							<li><a href="#">С оплатой за позиции</a></li>
+							<li><a href="#">С оплатой за клики</a></li>
+							<li><a href="#">С оплатой за лиды</a></li>
+							<li><a href="#">Интернет-магазина</a></li>
+							<li><a href="#">Молодого сайта</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="gcell gcell--6 gcell--sm-auto gcell--def-2">
+					<div class="footer-column">
+						<div class="footer-column__title">Информация</div>
+						<ul class="footer-column__list">
+							<li><a href="about">О нас</a></li>
+							<li><a href="subpage">Комплексное продвижение</a></li>
+							<li><a href="services">Услуги</a></li>
+							<li><a href="faq">FAQ</a></li>
+							<li><a href="text-reviews">Отзывы</a></li>
+							<li><a href="news">Новости</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="gcell gcell--6 gcell--sm-auto gcell--def-2">
+					<div class="footer-column">
+						<div class="footer-column__title">Контакты</div>
+						<ul class="footer-column__list">
+							<li><a href="tel:+380501234567">+38(050) 123-45-67</a></li>
+							<li><a href="tel:+380501234567">+38(067) 123-45-67</a></li>
+							<li></li>
+							<li class="_mt-lg">
+								<address>г.Киев, бул.Шевченко, 28</address>
+							</li>
+							<li><a href="mailto:office@seoevolution.ru">office@seoevolution.ru</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="gcell gcell--12 gcell--sm-auto gcell--def-3">
+					<div class="footer-column">
+						<div class="footer-column__title">Мы в социальных сетях</div>
+						<div class="socials-list">
+							<a href="#"
+							   class="social-link social-link--facebook"><%- new app.el.SvgIcon('facebook') %></a>
+							<a href="#"
+							   class="social-link social-link--twitter"><%- new app.el.SvgIcon('twitter') %></a>
+							<a href="#"
+							   class="social-link social-link--google-plus"><%- new app.el.SvgIcon('google-plus') %></a>
+							<a href="#"
+							   class="social-link social-link--vkontakte"><%- new app.el.SvgIcon('vkontakte') %></a>
+							<a href="#"
+							   class="social-link social-link--instagram"><%- new app.el.SvgIcon('instagram') %></a>
+						</div>
+					</div>
+				</div>
+				<div class="gcell gcell--12  gcell--def-2">
+					<img class="footer__logo" src="/Media/assets/images/logo.jpg" alt="Seo Logo">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer__footer">
+		<div class="container">
+			<div class="grid _justify-center _text-center">
+				2017<br>
+				Агентство интернет-маркетинга © Seo.com
+			</div>
+		</div>
+	</div>
+</div>
+<%- app.widget('mobile-menu.ejs') %>
